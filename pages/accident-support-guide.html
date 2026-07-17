@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="theme-color" content="#0e4f50">
+  <meta name="description" content="依事故資料整理的長輩與信任親友行動指南：事故責任、證據、調解說法、求償試算、強制險、簽字風險與後續程序。">
+  <title>事故調解權益行動指南｜長輩安心版</title>
+  <style>
+    :root{
+      --ink:#183334;--muted:#516766;--paper:#f7f2e8;--surface:#fffdf7;--teal:#0e4f50;
+      --teal-2:#176b69;--sage:#dce7da;--sage-2:#edf3e9;--terracotta:#c95f3e;--gold:#e4ac54;
+      --danger:#9d2f2b;--danger-bg:#fff0ea;--line:#ccd8d2;--shadow:0 12px 32px rgba(25,55,52,.09);
+      --base:20px;--radius:18px;--max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:var(--base);line-height:1.78;letter-spacing:.015em}
+    body.large{--base:23px} body.xlarge{--base:26px}
+    body.contrast{--paper:#fff;--surface:#fff;--ink:#000;--muted:#222;--teal:#003f40;--teal-2:#005252;--line:#555;--sage:#e8f2e8;--sage-2:#fff5cc;--danger:#800000;--danger-bg:#fff}
+    a{color:var(--teal-2);text-underline-offset:4px;text-decoration-thickness:2px}
+    a:hover{text-decoration-thickness:3px}
+    button,input,textarea{font:inherit}
+    button{min-height:48px;cursor:pointer}
+    :focus-visible{outline:4px solid #f2b84b;outline-offset:3px}
+    .skip{position:fixed;left:12px;top:-100px;z-index:100;background:#fff;color:#000;padding:12px 18px;border:3px solid #000;border-radius:10px}
+    .skip:focus{top:12px}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(247,242,232,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .topbar-inner{max-width:var(--max);margin:auto;min-height:74px;padding:10px 20px;display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:900;line-height:1.25}
+    .brand-mark{width:42px;height:42px;border-radius:12px;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:1.15rem}
+    .brand small{display:block;font-size:.68rem;color:var(--muted);font-weight:700}
+    .tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .tool-btn,.btn{border:2px solid var(--teal);border-radius:999px;background:var(--surface);color:var(--teal);padding:8px 15px;font-weight:900}
+    .tool-btn:hover,.btn:hover{background:var(--sage)}
+    .tool-btn.active{background:var(--teal);color:#fff}
+    .hero{position:relative;overflow:hidden;background:var(--teal);color:#fff;padding:76px 20px 62px}
+    .hero::before{content:"";position:absolute;inset:auto -10% -210px 42%;height:440px;border-radius:50%;background:#1b6967;opacity:.6}
+    .hero::after{content:"";position:absolute;width:180px;height:180px;border:30px solid rgba(255,255,255,.07);border-radius:50%;left:-60px;top:40px}
+    .hero-inner{position:relative;max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.35fr .65fr;gap:54px;align-items:end}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;text-transform:none;font-weight:900;letter-spacing:.06em;color:#f7d59c;font-size:.82rem}
+    .eyebrow::before{content:"";width:28px;border-top:3px solid currentColor}
+    h1{font-size:clamp(2.35rem,7vw,5.35rem);line-height:1.02;letter-spacing:-.045em;margin:20px 0 24px;max-width:900px}
+    .hero-lead{font-size:1.18rem;line-height:1.7;max-width:760px;margin:0;color:#eff7f4}
+    .hero-note{border-left:4px solid var(--gold);padding:8px 0 8px 18px;color:#fff4de;font-weight:800}
+    .privacy{display:flex;gap:10px;align-items:flex-start;margin-top:26px;font-size:.85rem;color:#dbe9e6}
+    .hero-side{display:grid;gap:14px}
+    .deadline{background:#fff;color:var(--ink);border-radius:var(--radius);padding:22px;box-shadow:0 16px 50px rgba(0,0,0,.18)}
+    .deadline strong{display:block;font-size:1.55rem;line-height:1.25;color:var(--danger)}
+    .deadline small{display:block;color:var(--muted);font-weight:800;margin-top:4px}
+    .deadline-days{font-size:2.6rem!important;letter-spacing:-.04em}
+    .deadline input[type="date"]{width:100%;border:2px solid #9fb0aa;border-radius:10px;padding:9px 10px;font-weight:800;color:var(--ink);background:#fff;margin-top:6px}
+    .deadline .mediation-days{font-size:1.9rem!important}
+    .quicknav{background:var(--surface);border-bottom:1px solid var(--line)}
+    .quicknav-inner{max-width:var(--max);margin:auto;display:flex;gap:8px;overflow:auto;padding:12px 20px;scrollbar-width:thin}
+    .quicknav a{white-space:nowrap;text-decoration:none;font-weight:900;border-radius:999px;padding:7px 13px;color:var(--ink)}
+    .quicknav a:hover{background:var(--sage)}
+    main{max-width:var(--max);margin:auto;padding:56px 20px 120px}
+    .section{padding:64px 0;border-bottom:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:120px 1fr;gap:28px;margin-bottom:34px}
+    .section-no{font-weight:950;color:var(--terracotta);letter-spacing:.08em;border-top:4px solid var(--terracotta);padding-top:8px}
+    .section h2{font-size:clamp(1.85rem,4vw,3.25rem);line-height:1.15;letter-spacing:-.03em;margin:0 0 12px}
+    .section-intro{color:var(--muted);font-size:1.08rem;max-width:860px;margin:0}
+    h3{font-size:1.35rem;line-height:1.35;margin:0 0 12px}
+    h4{font-size:1.03rem;margin:0 0 8px}
+    p{margin:.55em 0 1em}
+    .critical{background:var(--danger-bg);border:3px solid #e9a68e;border-radius:var(--radius);padding:24px;margin:0 0 28px}
+    .critical h3{color:var(--danger)}
+    .action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .action{background:var(--surface);border:1px solid var(--line);border-top:7px solid var(--teal);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .action .step{display:grid;place-items:center;width:38px;height:38px;background:var(--teal);color:#fff;border-radius:50%;font-weight:950;margin-bottom:16px}
+    .action ul,.plain-list{padding-left:1.3em;margin:.4em 0}
+    li{margin:.45em 0}
+    .callout{background:var(--sage-2);border-left:6px solid var(--teal);padding:20px 22px;border-radius:0 14px 14px 0;margin:22px 0}
+    .callout.warning{background:#fff6dd;border-color:var(--gold)}
+    .callout.danger{background:var(--danger-bg);border-color:var(--danger)}
+    .status-legend{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+    .badge{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:5px 10px;font-size:.76rem;font-weight:950;line-height:1.2}
+    .badge.confirmed{background:#d9ece1;color:#15583b}.badge.memory{background:#fff0c7;color:#6e4a00}.badge.prove{background:#f7d8d0;color:#842d24}
+    .fact-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+    .fact-table th,.fact-table td{text-align:left;vertical-align:top;padding:16px;border-bottom:1px solid var(--line)}
+    .fact-table th{width:24%;background:#eef3ec;font-weight:950}
+    .fact-table tr:last-child th,.fact-table tr:last-child td{border-bottom:0}
+    .timeline{position:relative;margin:32px 0 0;padding-left:46px}
+    .timeline::before{content:"";position:absolute;left:14px;top:8px;bottom:8px;border-left:4px solid var(--line)}
+    .event{position:relative;padding:0 0 28px}
+    .event::before{content:"";position:absolute;width:19px;height:19px;border-radius:50%;background:var(--surface);border:5px solid var(--terracotta);left:-41px;top:7px}
+    .event time{font-weight:950;color:var(--terracotta);display:block}
+    .event p{margin:.25em 0;color:var(--muted)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+    .panel.teal{background:var(--teal);color:#fff;border-color:var(--teal)}
+    .panel.teal a{color:#fff}
+    .svg-wrap{background:#eef2e7;border:1px solid var(--line);border-radius:18px;padding:14px;margin:20px 0 6px;overflow-x:auto}
+    .svg-wrap svg{display:block;max-width:100%;height:auto;margin:auto}
+    .memory-view{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+    .memory-card{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--gold);border-radius:14px;padding:20px}
+    .memory-card b.tag{display:block;color:#7a5000;font-size:.8rem;letter-spacing:.06em;margin-bottom:6px}
+    .memory-card .quote{background:var(--sage-2);border-radius:12px;padding:14px 16px;margin:10px 0;font-size:1.05em}
+    .memory-card .note{color:var(--muted);font-size:.85rem;margin:.3em 0 0}
+    .issue-list{counter-reset:issue;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .issue{counter-increment:issue;background:var(--surface);border:1px solid var(--line);padding:22px;border-radius:var(--radius)}
+    .issue::before{content:counter(issue);display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--terracotta);color:#fff;font-weight:950;margin-bottom:14px}
+    .speech{background:#fffdf7;border:2px solid var(--teal);border-radius:24px 24px 24px 4px;padding:28px;position:relative;font-size:1.08rem}
+    .speech p{margin:.6em 0}
+    .copy-row{display:flex;gap:10px;align-items:center;margin-top:18px;flex-wrap:wrap}
+    .btn.primary{background:var(--teal);color:#fff}.btn.terracotta{background:var(--terracotta);border-color:var(--terracotta);color:#fff}
+    .copy-status{font-size:.82rem;color:var(--teal);font-weight:900}
+    .response-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+    .response{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+    .response .their{color:var(--danger);font-weight:950}
+    .response .ours{border-left:4px solid var(--teal);padding-left:14px}
+    details{background:var(--surface);border:1px solid var(--line);border-radius:15px;margin:12px 0;overflow:hidden}
+    summary{cursor:pointer;font-weight:950;padding:17px 20px;list-style:none;display:flex;gap:14px;justify-content:space-between;align-items:center}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"＋";font-size:1.25rem;color:var(--teal);flex:0 0 auto}
+    details[open] summary::after{content:"－"}
+    details[open] summary{background:var(--sage-2);border-bottom:1px solid var(--line)}
+    .details-body{padding:18px 22px}
+    .check-progress{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+    .progress-track{height:16px;min-width:220px;flex:1;background:#dce4df;border-radius:999px;overflow:hidden}
+    .progress-bar{height:100%;width:0;background:var(--teal);transition:width .25s}
+    .checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .check-item{display:flex;align-items:flex-start;gap:13px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:15px;cursor:pointer}
+    .check-item:hover{border-color:var(--teal)}
+    .check-item input{width:26px;height:26px;flex:0 0 auto;accent-color:var(--teal);margin-top:2px}
+    .check-item strong{display:block}
+    .check-item small{display:block;color:var(--muted)}
+    .check-item .how{display:block;color:#0e4f50;font-size:.78rem;font-weight:800;margin-top:4px}
+    label.field{display:block;font-weight:950;margin:16px 0 7px}
+    textarea,input[type="number"],input[type="text"]{width:100%;border:2px solid #9fb0aa;border-radius:12px;background:#fff;color:#122;padding:13px 15px}
+    textarea{min-height:110px;resize:vertical;line-height:1.55}
+    .field-note{color:var(--muted);font-size:.8rem}
+    .calc{background:var(--teal);color:#fff;border-radius:26px;padding:28px}
+    .calc-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+    .calc-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .calc-field{background:#fff;color:var(--ink);border-radius:13px;padding:13px}
+    .calc-field label{display:block;font-weight:950;font-size:.82rem}
+    .calc-field input{border:0;border-bottom:2px solid var(--line);border-radius:0;padding:8px 0}
+    .calc-field.received{outline:3px dashed var(--gold)}
+    .calc-total{background:#fff;color:var(--ink);border-radius:18px;padding:24px;align-self:start;position:sticky;top:96px}
+    .calc-total .amount{font-size:2.2rem;font-weight:950;color:var(--terracotta);line-height:1.15;word-break:break-all}
+    .calc-total .amount.remain{font-size:2.6rem;color:var(--danger)}
+    .calc-total small{display:block;color:var(--muted)}
+    .route{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch;margin:26px 0}
+    .route-step{position:relative;background:var(--surface);border:2px solid var(--teal);border-radius:15px;padding:18px;text-align:center;font-weight:950}
+    .route-step:not(:last-child)::after{content:"→";position:absolute;right:-20px;top:50%;transform:translateY(-50%);z-index:2;color:var(--terracotta);font-size:1.4rem}
+    .route-step small{display:block;color:var(--muted);font-weight:700}
+    .term-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .term{background:var(--surface);border-left:6px solid var(--teal);padding:16px;border-radius:0 13px 13px 0}
+    .danger-clause{background:#fff3ef;border:2px dashed var(--danger);border-radius:15px;padding:20px;color:#5c2420}
+    .source-list{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .source{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:17px}
+    .source b{display:block}.source small{color:var(--muted)}
+    .phone-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .phone{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--teal);border-radius:0 13px 13px 0;padding:16px}
+    .phone b{display:block}
+    .phone a.tel{font-size:1.3rem;font-weight:950;text-decoration:none;letter-spacing:.02em}
+    .phone small{display:block;color:var(--muted)}
+    .document-list{columns:2;column-gap:32px}
+    .document-list li{break-inside:avoid}
+    .elder-lead{font-size:1.14em}
+    .duty-table th{width:30%}
+    footer{background:#123f40;color:#e7f0ed;padding:42px 20px 110px}
+    footer .inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    footer a{color:#fff}
+    .mobile-nav{display:none}
+    .muted{color:var(--muted)}.tiny{font-size:.78rem}.nowrap{white-space:nowrap}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    body.elder .section:not(.elder-keep){display:none}
+    body.elder .quicknav a:not(.elder-link){display:none}
+    #printPack{display:none}
+    @media(max-width:900px){
+      .hero-inner,.calc-grid,.split{grid-template-columns:1fr}.hero{padding-top:54px}
+      .hero-side{grid-template-columns:1fr 1fr}.section-head{grid-template-columns:82px 1fr}
+      .action-grid{grid-template-columns:1fr}
+      .route{grid-template-columns:1fr}.route-step:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-27px;transform:translateX(-50%)}
+      .calc-total{position:static}.source-list{grid-template-columns:1fr}
+    }
+    @media(max-width:680px){
+      body{--base:19px;padding-bottom:72px}.topbar-inner{padding:8px 14px;display:grid;grid-template-columns:1fr;gap:8px}.brand{justify-content:center;white-space:nowrap}.brand small,.tools .print-label{display:none}
+      .tools{justify-content:center;gap:6px}.tool-btn{padding:7px 10px;min-width:46px;font-size:.84rem}.hero{padding:46px 16px 42px}.hero-inner{gap:28px}.hero-side{grid-template-columns:1fr}
+      main{padding:26px 16px 80px}.section{padding:48px 0}.section-head{display:block}.section-no{display:inline-block;margin-bottom:16px}
+      .quicknav-inner{padding:9px 12px;gap:6px}.quicknav a{font-size:.82rem;padding:6px 10px}
+      .fact-table,.fact-table tbody,.fact-table tr,.fact-table th,.fact-table td{display:block;width:100%}.fact-table th{border-bottom:0;padding-bottom:4px}.fact-table td{padding-top:4px}
+      .issue-list,.response-grid,.checklist,.calc-fields,.term-list,.memory-view,.phone-grid{grid-template-columns:1fr}
+      .document-list{columns:1}
+      footer .inner{grid-template-columns:1fr}
+      .mobile-nav{position:fixed;z-index:60;display:grid;grid-template-columns:repeat(4,1fr);left:0;right:0;bottom:0;padding:7px max(8px,env(safe-area-inset-right)) calc(7px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));background:#fff;border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(0,0,0,.08)}
+      .mobile-nav a{text-decoration:none;text-align:center;font-size:.69rem;font-weight:950;color:var(--teal);padding:5px 2px;line-height:1.2}
+      .mobile-nav span{display:block;font-size:1.15rem}
+    }
+    @media print{
+      :root{--base:12pt}.topbar,.quicknav,.mobile-nav,.tools,.copy-row,.btn,.privacy{display:none!important}
+      body{background:#fff;color:#000;padding:0}.hero{background:#fff;color:#000;padding:10mm 0;border-bottom:3px solid #000}
+      .hero::before,.hero::after{display:none}.hero-inner{display:block}.hero-lead,.hero-note{color:#000}.hero-side{display:none}
+      main{max-width:none;padding:0}.section{padding:9mm 0;page-break-inside:auto}.section-head{grid-template-columns:25mm 1fr;margin-bottom:5mm}
+      .panel,.action,.issue,.response,.source,.phone,.calc,.calc-total{box-shadow:none;color:#000;background:#fff}
+      .calc{border:2px solid #000}.calc-total{border:1px solid #000}.calc-field{border:1px solid #777}
+      details>summary{display:none}details>.details-body{display:block!important;padding:4mm}details{page-break-inside:avoid}
+      a{color:#000;text-decoration:none}a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;word-break:break-all}
+      textarea{border:1px solid #666;min-height:35mm}.section,.panel,.action,.critical,.callout{break-inside:avoid}
+      footer{background:#fff;color:#000;border-top:2px solid #000;padding:10mm 0}
+      #printPack{display:none}
+      body.packmode .hero,body.packmode main>.section,body.packmode footer{display:none!important}
+      body.packmode #printPack{display:block!important;padding:0}
+      #printPack h2{border-bottom:2.5px solid #000;padding-bottom:2mm;font-size:16pt;margin:0 0 4mm}
+      #printPack h3{font-size:12.5pt;margin:0 0 2mm;border-left:4px solid #000;padding-left:3mm}
+      .pack-block{margin:0 0 6mm;break-inside:avoid}
+      #printPack table{width:100%;border-collapse:collapse}
+      #printPack th,#printPack td{border:1px solid #333;padding:1.6mm 2.4mm;font-size:10pt;text-align:left;vertical-align:top}
+      #printPack th{background:#eee}
+      #printPack ul{margin:1mm 0;padding-left:5mm}#printPack li{margin:.8mm 0;font-size:10.5pt}
+      #printPack .pack-cols{columns:2;column-gap:8mm}
+      #printPack p{margin:1mm 0;font-size:10.5pt}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">直接跳到主要內容</a>
+  <header class="topbar" aria-label="閱讀工具">
+    <div class="topbar-inner">
+      <a class="brand" href="#top"><span class="brand-mark">護</span><span>事故權益指南<small>長輩安心版・隱私友善整理</small></span></a>
+      <div class="tools">
+        <button class="tool-btn" type="button" data-font="normal" aria-label="標準字體">A</button>
+        <button class="tool-btn" type="button" data-font="large" aria-label="放大字體">A＋</button>
+        <button class="tool-btn" type="button" data-font="xlarge" aria-label="最大字體">A＋＋</button>
+        <button class="tool-btn" id="contrast" type="button" aria-pressed="false">高對比</button>
+        <button class="tool-btn" id="elderToggle" type="button" aria-pressed="false">長輩精簡版</button>
+        <button class="tool-btn" type="button" onclick="window.print()">列印<span class="print-label">／存PDF</span></button>
+        <button class="tool-btn" id="clearLocalData" type="button" aria-label="清除本機儲存的日期、勾選與試算資料">清除資料</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="top" class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">把複雜程序，變成可以照著做的步驟</span>
+        <h1>事故調解<br>權益行動指南</h1>
+        <p class="hero-lead">這不是叫長輩背法條，而是協助長輩與信任的親友把事故說清楚、把證據帶齊，並逐項整理責任與損害。長輩如實陳述；親友協助核對期限、文件、保險、金額與條款。</p>
+        <p class="hero-note">核心原則：先守期限、再補證據；初判不是定論，責任比例不先承認，條件未清不簽「全部放棄」。</p>
+        <div class="privacy"><span aria-hidden="true">🔒</span><span>本頁只使用 A 車／B 車代稱，並已盡量移除直接識別資料。頁面上填寫的日期、勾選與金額只儲存在這台裝置的瀏覽器，不會由本頁主動上傳；網站主機仍可能保留基本連線紀錄。使用共用裝置後，請按「清除資料」。</span></div>
+      </div>
+      <aside class="hero-side" aria-label="重要日期提醒">
+        <div class="deadline"><small>我的調解日期（收到公所通知書後填入）</small><input type="date" id="mediationDate" aria-label="調解日期"><strong class="deadline-days mediation-days" id="mediationDays">尚未填寫</strong><small>有正當理由可洽調解會請求改期，不必硬撐。</small></div>
+        <div class="deadline"><small>刑事過失傷害告訴・保守提醒</small><strong>2026／11／06 前</strong><strong class="deadline-days" id="criminalDays">計算中</strong><small>依現有資料保守推算；實際起算依「知悉犯人」時間，請提前向承辦單位確認。</small></div>
+        <div class="deadline"><small>新北事故鑑定・一般申請期限</small><strong>事故後 6 個月內</strong><strong class="deadline-days" id="appraisalDays">計算中</strong><small>日期為行動提醒；若已進入偵查／審判，應改向司法機關聲請囑託。</small></div>
+      </aside>
+    </div>
+  </div>
+
+  <nav class="quicknav" aria-label="章節導覽"><div class="quicknav-inner">
+    <a href="#elder" class="elder-link">給長輩</a><a href="#today">今天先做</a><a href="#facts">事件全貌</a><a href="#story" class="elder-link">經過與回憶</a><a href="#responsibility">責任爭點</a><a href="#evidence">證據清單</a><a href="#say" class="elder-link">調解怎麼說</a><a href="#claim">求償試算</a><a href="#insurance">強制險</a><a href="#settlement">簽字檢查</a><a href="#next">後續程序</a><a href="#meeting" class="elder-link">調解當天</a><a href="#scenarios" class="elder-link">狀況手冊</a><a href="#doctor">醫療補證</a><a href="#phones">重要電話</a><a href="#sources">官方來源</a>
+  </div></nav>
+
+  <main id="main">
+
+    <!-- ========== 01 給長輩的一頁 ========== -->
+    <section class="section elder-keep" id="elder">
+      <header class="section-head"><div class="section-no">01 / 給長輩</div><div><h2>給您的一頁：這件事，不用您一個人扛</h2><p class="section-intro">這一節專門寫給長輩看，先說最重要的責任、調解與簽字重點。其他章節可由您和信任的親友共同查看、核對與處理。</p></div></header>
+      <p class="elder-lead">警方初判目前對雙方都有注意義務的記載：一方面指出對方在路段中左轉時，疑似<strong>「疏於注意同向來車」</strong>；另一方面也記載您疑似未注意車前狀況。<strong>初判不是最後責任比例。</strong>目前有理由主張，對方左轉或向左切入是事故發生的重要原因；最後仍要看現場圖、照片、車損與事故鑑定。您和信任的親友已把警方文件、醫院診斷與收據整理起來，<strong>您不需要跟對方爭執，也不需要記住所有法條。</strong></p>
+      <div class="callout"><strong>正式傷勢證明很重要：</strong><br>診斷證明記載「創傷性蜘蛛膜下腔出血」，可證明本次事故不只是一般擦傷，而是曾因頭部外傷接受急診及住院治療。事故後曾出現的嗜睡、跌倒、臉痛等情形，是否與頭部傷勢有直接關係，仍以醫師病歷與專業判斷為準；調解時可以如實說明「曾經發生」，不要說成已確定的永久後遺症。</div>
+      <h3>您先記住三件事</h3>
+      <div class="action-grid">
+        <article class="action"><span class="step">1</span><h3>記得的，照實說</h3><p>調解或做筆錄時，記得多少就說多少。<strong>不記得的就說「我不記得」</strong>。不用背稿，也不要猜速度、距離或其他沒有把握的細節。</p></article>
+        <article class="action"><span class="step">2</span><h3>初判不是最後結果</h3><p>即使最後可能被認為有部分注意義務，也不代表不能求償。對方左轉或向左切入前是否確認安全，仍是本案的重要責任爭點；不要先承認任何責任比例。</p></article>
+        <article class="action"><span class="step">3</span><h3>簽名和談錢，先共同確認</h3><p>任何和解書、撤告文件或賠償條件，都先說：<strong>「我要和信任的親友一起看過，今天不先答應。」</strong>條件、付款與放棄範圍沒有寫清楚，就不要簽。</p></article>
+      </div>
+      <h3 style="margin-top:32px">分工很清楚：重要決定由您作，親友協助把關</h3>
+      <table class="fact-table duty-table">
+        <tbody>
+          <tr><th>您主要負責</th><td>如實說明親身經歷；不確定就說不確定；重要條件充分理解後，再依自己的意願決定。</td></tr>
+          <tr><th>親友協助</th><td>整理文件與證據、核對期限、申請保險與鑑定、製作金額表、檢查調解條款。</td></tr>
+          <tr><th>共同出席</th><td>調解、做筆錄或其他程序可由信任的親友陪同。<strong>您不用單獨面對對方。</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="callout warning"><strong>三句護身的話，記起來就夠：</strong><br>①「這部分我不確定，我不猜。」<br>②「這件事我要先和信任的親友確認。」<br>③「我要帶回去看，今天不簽。」</div>
+      <div class="critical" style="margin-top:26px">
+        <h3>若身體突然出現警訊</h3>
+        <p>若出現劇烈頭痛、持續嘔吐、意識不清、手腳無力、說話不清楚、抽搐或再次嚴重跌倒，仍應<strong>立即就醫或撥 119</strong>。這是安全提醒，不影響目前以究責、調解與求償為主的處理方向。</p>
+      </div>
+    </section>
+
+    <!-- ========== 02 今天先做 ========== -->
+    <section class="section" id="today">
+      <header class="section-head"><div class="section-no">02 / 先做</div><div><h2>長輩與親友現在先做的 3 件事</h2><p class="section-intro">目前重點是守住期限、補強責任證據，並把求償項目與調解底線整理清楚。不要先被「雙方都有錯」或口頭承諾帶著走。</p></div></header>
+      <div class="action-grid">
+        <article class="action"><span class="step">1</span><h3>確認刑事告訴是否正式提出</h3><p>報警處理不一定等於已正式提出「過失傷害告訴」。長輩或信任的親友可撥土城分局交通分隊 <a class="nowrap" href="tel:0222666090">02-2266-6090</a>，向承辦警員確認告訴狀態、案號與是否還需補件。</p><div class="callout"><strong>清楚說：</strong><br>「我要確認 B 車騎士是否已對 A 車駕駛正式提出過失傷害告訴，請告訴我目前狀態與案號。」</div></article>
+        <article class="action"><span class="step">2</span><h3>決定鑑定並補齊事故證據</h3><p>初判表同時記載 A、B 兩方注意義務，並不是最終責任比例。補齊警方現場照片、雙方車損特寫、修車估價及可能影像；若尚未進入司法程序，儘速評估在事故後 6 個月內向裁決處申請鑑定（規費 3,000 元），已進入者則向檢察官或法院聲請囑託。</p></article>
+        <article class="action"><span class="step">3</span><h3>整理求償表與調解底線</h3><p>把醫療、牙科、交通、照護、輔具、修車、財物與精神損害逐項列出，註明金額與證據；另寫清楚可接受的付款方式、強制險如何計入，以及「款項未履行前不撤告、條件不清不簽全面放棄」。</p></article>
+      </div>
+      <div class="callout warning"><strong>先不要做：</strong>責任比例、完整損失、保險給付與付款條件尚未釐清前，不要只因對方催促，就簽「雙方互不追究」「一切民刑事請求均拋棄」或先撤回告訴。</div>
+      <div class="callout"><strong>醫療只保留與舉證相關的提醒：</strong>治療已大致告一段落，不必為求償勉強就醫；但若仍有真實症狀或牙科、照護因果尚未記載，應以既有病歷或必要的補充診斷說明。</div>
+      <div class="callout"><strong>所有期限一張表：</strong>詳見第 11 節「期限總表」。依現有資料，刑事告訴與一般事故鑑定都應以 2026／11／06 前完成作保守行動提醒；實際期限仍須提前向承辦單位確認。</div>
+    </section>
+
+    <!-- ========== 03 事件全貌 ========== -->
+    <section class="section" id="facts">
+      <header class="section-head"><div class="section-no">03 / 全貌</div><div><h2>這起事故，目前能確定什麼？</h2><p class="section-intro">說話前先分清楚「官方文件」「本人記憶」「還需要證明」。可信度分層會讓長輩在調解時更穩，不會把推測講成事實。</p></div></header>
+      <div class="status-legend"><span class="badge confirmed">● 官方／文件確認</span><span class="badge memory">● 長輩回憶</span><span class="badge prove">● 尚待補證</span></div>
+      <table class="fact-table">
+        <tbody>
+          <tr><th>時間、地點</th><td><span class="badge confirmed">已確認</span> 2026 年 5 月 6 日 10:15，新北市土城區裕民路 262 號附近。</td></tr>
+          <tr><th>天候與道路</th><td><span class="badge confirmed">已確認</span> 日間、晴天、現場無號誌，速限 50 公里。</td></tr>
+          <tr><th>車輛與方向</th><td><span class="badge confirmed">已確認</span> A 車為普通輕型機車，B 車為長輩駕駛的普通重型機車；兩車同向、相鄰行駛。</td></tr>
+          <tr><th>A 車動作</th><td><span class="badge confirmed">初判表</span> A 車「疑於路段中左轉彎行駛，疏於注意同向來車」，欲左轉進入裕民路 256 巷。</td></tr>
+          <tr><th>B 車狀態</th><td><span class="badge memory">本人回憶</span> B 車原本直行；A 車在右側偏前，靠近後打方向燈並向左移動／轉彎。</td></tr>
+          <tr><th>撞擊感受</th><td><span class="badge memory">本人回憶</span> 感覺 A 車左側碰撞 B 車右側，之後失去意識；安全帽、假牙／牙齒脫落。</td></tr>
+          <tr><th>B 車不利記載</th><td><span class="badge confirmed">初判表</span> B 車「疑行駛時，疏於注意車前狀況，並採取必要之安全措施」。這一句必須正面回應，不能忽略。</td></tr>
+          <tr><th>主要傷勢</th><td><span class="badge confirmed">診斷證明</span> 創傷性蜘蛛膜下腔出血；5 月 6 日急診後住院，文件顯示 5 月 8 日或 5 月 9 日出院，日期需向醫院確認。</td></tr>
+          <tr><th>雙方傷勢對比</th><td><span class="badge prove">待證</span> 依長輩與親友目前所知，對方僅受外傷、傷勢較輕；我方為腦出血重傷。對方實際傷勢以其診斷文件為準，不自行斷定。</td></tr>
+          <tr><th>後續症狀</th><td><span class="badge memory">本人／親友觀察</span> 嘔吐、嗜睡、6 月非故意跌倒 3 次、臉部／眼下疼痛，是否可列入求償，仍需既有或補充醫療紀錄支持。</td></tr>
+          <tr><th>目前實支</th><td><span class="badge confirmed">收據</span> 醫院自付 1,308 元、牙科自付 100 元、活動假牙（彈性牙床）10,000 元，共 11,408 元。健保點數不是本人現金支出。</td></tr>
+        </tbody>
+      </table>
+      <div class="timeline" aria-label="事件時間線">
+        <article class="event"><time>2026／05／06・事故與急診</time><h3>上午 10:15 發生事故</h3><p>10:32 進急診；急診處置至 22:17 後住院（腦神經外科）。</p></article>
+        <article class="event"><time>2026／05／08–05／09・出院</time><h3>文件日期有一日落差</h3><p>診斷證明與收據偏向 5/9；出院照護計畫寫 5/8。向醫院申請完整病歷時一併釐清。</p></article>
+        <article class="event"><time>2026／06・返家後</time><h3>親友照護與反覆跌倒</h3><p>親友描述長輩事故後曾嗜睡、三次跌倒、使用手杖並改善浴室／居家安全；相關費用及因果若要列入求償，仍需醫療必要性或其他證據支持。</p></article>
+        <article class="event"><time>2026／06／20–07／04・牙科</time><h3>牙科與活動假牙</h3><p>現有收據 100 元與 10,000 元；仍要補牙醫診斷，說明哪顆牙／原假牙如何因事故受損及重作必要性。</p></article>
+        <article class="event"><time>2026／07／09・警察初判表核發</time><h3>A、B 兩方均有「疑」似疏失記載</h3><p>這不是法院判決，也不是確定比例；應用現場圖、車損方向、影像與鑑定繼續釐清。</p></article>
+      </div>
+    </section>
+
+    <!-- ========== 04 經過與回憶（親友協助整理版） ========== -->
+    <section class="section elder-keep" id="story">
+      <header class="section-head"><div class="section-no">04 / 經過</div><div><h2>事故是怎麼發生的：一張圖＋六格回憶</h2><p class="section-intro">長輩不用填寫任何東西。這一節是親友依長輩先前的口述協助整理的（錄音轉文字的明顯錯字已校正）。調解時照自己記得的說就好——<strong>就算跟這裡寫的不完全一樣也沒關係，永遠以當下真實的記憶為準。</strong></p></div></header>
+      <figure style="margin:0">
+        <div class="svg-wrap">
+        <svg viewBox="0 0 780 320" width="780" role="img" aria-labelledby="digTitle digDesc">
+          <title id="digTitle">事故相對位置示意圖</title>
+          <desc id="digDesc">兩車同向行駛：B車在左側車道直行，A車在右側偏前，向左轉入256巷時，於兩車接近並排處發生側向碰撞。示意圖非比例、非鑑定結論。</desc>
+          <defs>
+            <marker id="mB" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#0e4f50"/></marker>
+            <marker id="mA" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#c95f3e"/></marker>
+            <marker id="mK" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#183334"/></marker>
+          </defs>
+          <rect width="780" height="320" fill="#eef2e7"/>
+          <rect x="515" y="0" width="95" height="94" fill="#e9e2d0"/>
+          <text x="562" y="40" text-anchor="middle" font-size="13" fill="#6b6255" font-weight="700">裕民路</text>
+          <text x="562" y="60" text-anchor="middle" font-size="13" fill="#6b6255" font-weight="700">256巷</text>
+          <rect x="0" y="36" width="515" height="58" fill="#e3ddcb"/>
+          <rect x="610" y="36" width="170" height="58" fill="#e3ddcb"/>
+          <text x="14" y="66" font-size="12" fill="#8a8172">對向車道</text>
+          <rect x="0" y="30" width="515" height="6" fill="#c9c2b2"/>
+          <rect x="610" y="30" width="170" height="6" fill="#c9c2b2"/>
+          <rect x="0" y="94" width="780" height="170" fill="#e9e2d0"/>
+          <rect x="0" y="95" width="515" height="4" fill="#d0a23e"/>
+          <rect x="610" y="95" width="170" height="4" fill="#d0a23e"/>
+          <rect x="0" y="102" width="515" height="4" fill="#d0a23e"/>
+          <rect x="610" y="102" width="170" height="4" fill="#d0a23e"/>
+          <line x1="0" y1="182" x2="780" y2="182" stroke="#fffdf7" stroke-width="4" stroke-dasharray="26 20"/>
+          <rect x="0" y="264" width="780" height="6" fill="#c9c2b2"/>
+          <text x="150" y="114" font-size="13" fill="#0e4f50" font-weight="800">B車：左側・直行</text>
+          <rect x="150" y="120" width="100" height="42" rx="21" fill="#0e4f50"/>
+          <text x="200" y="148" text-anchor="middle" font-size="18" fill="#fff" font-weight="800">B車</text>
+          <line x1="258" y1="141" x2="468" y2="141" stroke="#0e4f50" stroke-width="6" marker-end="url(#mB)"/>
+          <rect x="318" y="198" width="100" height="42" rx="21" fill="#c95f3e"/>
+          <text x="368" y="226" text-anchor="middle" font-size="18" fill="#fff" font-weight="800">A車</text>
+          <path d="M420,216 C478,206 516,166 546,102" fill="none" stroke="#c95f3e" stroke-width="6" marker-end="url(#mA)"/>
+          <text x="318" y="259" font-size="13" fill="#c95f3e" font-weight="800">A車：右側偏前・向左轉入256巷</text>
+          <circle cx="505" cy="143" r="22" fill="none" stroke="#9d2f2b" stroke-width="3" stroke-dasharray="5 5"/>
+          <path d="M495,133 L515,153 M515,133 L495,153" stroke="#9d2f2b" stroke-width="6"/>
+          <text x="505" y="114" text-anchor="middle" font-size="13" fill="#9d2f2b" font-weight="800">碰撞位置（示意）</text>
+          <line x1="40" y1="292" x2="140" y2="292" stroke="#183334" stroke-width="4" marker-end="url(#mK)"/>
+          <text x="150" y="297" font-size="13" fill="#183334" font-weight="700">行進方向（兩車同向）</text>
+        </svg>
+        </div>
+        <figcaption class="tiny muted">依警方現場圖與長輩回憶繪製的概念示意（非比例、非鑑定結論）：A 車自右側偏前處向左轉入 256 巷，B 車在左側車道直行，兩車於近乎並排時發生側向碰撞。實際軌跡與碰撞點以現場照片、車損與鑑定為準。</figcaption>
+      </figure>
+      <div class="memory-view">
+        <div class="memory-card"><b class="tag">第 1 格・碰撞前</b><span class="badge memory">本人回憶</span>
+          <p class="quote">「5 月 6 日上午，我騎機車沿裕民路要回家，走原本的直行路線，天氣晴朗，我沒有要轉彎。」</p>
+        </div>
+        <div class="memory-card"><b class="tag">第 2 格・兩車位置</b><span class="badge memory">本人回憶</span> <span class="badge confirmed">與現場圖相符</span>
+          <p class="quote">「對方 A 車在我的右側、位置比我略前面。我們同方向、距離很近，後來幾乎並排。」</p>
+        </div>
+        <div class="memory-card"><b class="tag">第 3 格・對方動作</b><span class="badge memory">本人回憶</span>
+          <p class="quote">「對方有打方向燈，但接著就向左變換車道、要左轉進巷子。我感覺他速度不慢、動作很突然。」</p>
+          <p class="note">「速度快」是主觀感受，目前沒有測速資料——調解時說「我感覺」就好，不要說成確定事實。</p>
+        </div>
+        <div class="memory-card"><b class="tag">第 4 格・撞擊瞬間</b><span class="badge memory">本人回憶</span> <span class="badge prove">待車損照片印證</span>
+          <p class="quote">「感覺是對方車身左側撞到我機車的右側，我當場倒地、失去意識。有沒有來得及煞車，我不記得。」</p>
+        </div>
+        <div class="memory-card"><b class="tag">第 5 格・碰撞後</b><span class="badge memory">本人回憶</span> <span class="badge confirmed">診斷證明佐證</span>
+          <p class="quote">「醒來時人已經在醫院，才知道是救護車送我去的。醫生說我腦出血，我一直吐。安全帽掉了，假牙也不見了。住院到 5 月 9 日出院。」</p>
+        </div>
+        <div class="memory-card"><b class="tag">第 6 格・不確定的部分</b><span class="badge prove">交給證據</span>
+          <p class="quote">實際車速、方向燈亮了多久、第一個接觸點在哪裡、倒地後現場怎麼處理——<strong>這些長輩不用硬記</strong>，交給現場照片、監視器、車損與鑑定回答。</p>
+          <p class="note">被問到就回：「這部分我不確定，我不猜。」</p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px"><strong>事後對方的態度（可在調解中平靜陳述）：</strong>長輩還在住院、剛清醒時，對方只打過一通電話，向親友表示「兩邊都有受傷，就算了」；之後再無聞問。這段可以說明我方感受與對方處理態度，但求償仍回到證據與法律。</div>
+    </section>
+
+    <!-- ========== 05 責任爭點 ========== -->
+    <section class="section" id="responsibility">
+      <header class="section-head"><div class="section-no">05 / 爭點</div><div><h2>責任怎麼講，才不會被帶著走？</h2><p class="section-intro">本案不宜簡化成「後車撞前車」。兩車同向相鄰，爭點是 A 車左轉／向左移動前，是否確實確認側後方並讓直行車先行；同時也要面對 B 車的注意義務。</p></div></header>
+      <div class="split">
+        <div class="panel">
+          <h3>初判表對 A 車的具體指向</h3>
+          <p>A 車疑在路段中左轉，疏於注意同向來車。若 A 車從右側向左切入 B 車原行路徑，核心是「轉向／變換行向是否安全」。</p>
+          <ul class="plain-list"><li>方向燈是告知，不是取得優先權。</li><li>變換車道仍應讓直行車先行並保持安全距離。</li><li>兩車並行時，兩方都要注意間隔。</li></ul>
+        </div>
+        <div class="panel">
+          <h3>初判表對 B 車的不利點</h3>
+          <p>B 車被記載疑未注意車前狀況並採必要安全措施。長輩不要說「我絕對零責任」，應要求把抽象指摘說具體。</p>
+          <div class="callout"><strong>可以問：</strong>「請具體說明，我是在哪一秒、哪一個位置，有什麼可以避免卻沒有做的動作？依據是哪張照片、哪段影像或哪個車損痕跡？」</div>
+        </div>
+      </div>
+      <h3 style="margin-top:32px">鑑定時要釐清的 4 個問題</h3>
+      <div class="issue-list">
+        <article class="issue"><h3>兩車撞前是前後還是近乎並行？</h3><p>看現場圖、刮痕方向、撞擊點、倒地位置，不能只用「誰在前面」一句話決定。</p></article>
+        <article class="issue"><h3>A 車何時開始向左？</h3><p>打燈時機、橫向位移、距離與 B 車反應時間，決定 B 車是否有合理避讓可能。</p></article>
+        <article class="issue"><h3>碰撞部位能不能互相吻合？</h3><p>若 A 左側與 B 右側有對應痕跡，可能支持側向碰撞；必須靠清晰照片／修車估價與鑑定。</p></article>
+        <article class="issue"><h3>B 車究竟被要求做什麼？</h3><p>「注意車前」很抽象。要求說明可預見時間、煞停距離、可採措施與未採措施的客觀依據。</p></article>
+      </div>
+      <div class="callout"><strong>法規基礎：</strong>道路交通安全規則第 94 條要求注意車前狀況及兩車並行間隔；第 99 條明定機車變換車道應讓直行車先行並注意安全距離；第 109 條要求方向燈持續到完成轉彎／變換車道。若事故位置法律上屬交岔路口，再評估第 102 條「轉彎車讓直行車」；不要在位置未確認前硬套。</div>
+      <div class="callout warning"><strong>比例的談法：</strong>就算最後認定雙方都有過失，一般也是按比例分擔（民法第 217 條過失相抵），不是「你也有錯所以互不相欠」。正確順序：先算清楚全部損害，再談比例；不要自己先承認某個比例。</div>
+    </section>
+
+    <!-- ========== 06 證據清單 ========== -->
+    <section class="section" id="evidence">
+      <header class="section-head"><div class="section-no">06 / 證據</div><div><h2>把「我有受傷」變成能求償的證據鏈</h2><p class="section-intro">每一筆請求都要能回答四件事：發生了什麼、和事故有沒有關、為什麼有必要、金額怎麼算。每一項都附「去哪拿」。</p></div></header>
+      <div class="check-progress"><strong id="progressText">0／16 已完成</strong><div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div><button class="btn" type="button" id="clearChecks">清除勾選</button></div>
+      <div class="checklist" id="evidenceChecklist">
+        <label class="check-item"><input type="checkbox" data-check="police-photos"><span><strong>警察現場照片</strong><small>含車輛倒地、刮痕、道路標線與巷口全景。</small><span class="how">▸ 去哪拿：事故 7 日後可申請；洽土城分局交通分隊，或上「新北市交通事故 E 化系統」線上申請。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="diagram"><span><strong>現場圖與初判表</strong><small>已持有；另外核對簽名、相對位置與註記。</small><span class="how">▸ 去哪拿：已取得；需補副本時同上管道。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="vehicle"><span><strong>雙方車損近照</strong><small>拍左／右側、前後、刮痕方向；修理前先拍。</small><span class="how">▸ 去哪拿：自行拍攝；車已修就向機車行要修理前照片與估價單。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="video"><span><strong>監視器、行車紀錄器、目擊者</strong><small>影像可能已被覆寫，愈快處理愈好。</small><span class="how">▸ 去哪拿：向附近店家、住戶、里長詢問；路口公設監視器可請警方協助調閱。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="medical-full"><span><strong>完整急診與住院病歷</strong><small>病歷摘要、護理紀錄、CT／影像報告、用藥與出院紀錄。</small><span class="how">▸ 去哪拿：土城醫院病歷室申請（帶身分證；親友代辦另備委託書），順便釐清 5/8、5/9 出院日差異。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="neuro"><span><strong>仍有症狀時的補充醫療紀錄</strong><small>只有仍有真實症狀或需補因果說明時，才補充就醫或診斷。</small><span class="how">▸ 怎麼做：帶既有病歷與第 14 節清單，請醫師依實際情況評估，不為求償勉強就醫。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="care"><span><strong>照護必要性證明</strong><small>需要照護的期間、時數、休養與注意事項。</small><span class="how">▸ 去哪拿：回診時請醫師開立診斷書載明；協助照護的親友同步整理照護紀錄。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="dental"><span><strong>牙醫因果診斷</strong><small>哪顆牙／哪副假牙受損、與事故關係、治療必要性。</small><span class="how">▸ 去哪拿：回原就診牙醫診所，請牙醫師開診斷書並記載缺損牙位與重作原因。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="receipts"><span><strong>所有收據正本與影本</strong><small>醫療、牙科、藥品、交通、輔具、修車，按日期編號。</small><span class="how">▸ 去哪拿：家中集中一個資料夾；正本自留、影本送件。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="transport"><span><strong>就醫交通紀錄</strong><small>日期、起訖地、方式、金額、就醫目的。</small><span class="how">▸ 去哪拿：保留計程車收據／乘車紀錄，做一張與就診日期對照的表。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="family-care"><span><strong>親友照護紀錄</strong><small>每天誰照顧、時數、協助項目與異常症狀。</small><span class="how">▸ 怎麼做：協助照護的親友依記憶或既有資料記一行：日期、幾點到幾點、做了什麼、長輩狀況。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="falls"><span><strong>三次跌倒紀錄</strong><small>日期、地點、原因、傷勢、照片、在場者與是否就醫。</small><span class="how">▸ 去哪拿：先憑記憶把三次寫下來；之後每次跌倒都當天記錄並就醫。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="property"><span><strong>安全帽與隨身物品損害</strong><small>照片、購買證明；舊物通常考量折舊。</small><span class="how">▸ 去哪拿：拍照存證；找得到購買憑證更好。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="repair"><span><strong>機車估價／修理單</strong><small>品項、工資、零件與事故損傷說明。</small><span class="how">▸ 去哪拿：機車行開立估價單或發票，請註明「事故損壞」。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="insurance"><span><strong>雙方強制險與任意險資料</strong><small>保險公司、承辦人、案件編號與已申請項目。</small><span class="how">▸ 去哪拿：向對方索取投保公司；查不到就撥 0800-825-688 詢問（見第 9 節）。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="complaint"><span><strong>刑事告訴狀態／案號</strong><small>確認已明確告訴，不只是一般報案紀錄。</small><span class="how">▸ 去哪拿：撥 02-2266-6090 向承辦警員確認並記下案號。</span></span></label>
+        <label class="check-item"><input type="checkbox" data-check="appraisal"><span><strong>事故鑑定／司法囑託狀態</strong><small>確認是否已申請鑑定，或案件進入司法程序後已聲請囑託。</small><span class="how">▸ 怎麼做：記下申請日、收件號碼、繳費或聲請狀態；逾期風險要提前向承辦機關確認。</span></span></label>
+      </div>
+      <div class="callout warning"><strong>費用收據不等於一定全賠：</strong>還要證明與事故的因果關係及支出的必要、合理。親友照護費與同一親友的薪資損失，不要重複計算同一段時間。</div>
+    </section>
+
+    <!-- ========== 07 調解怎麼說 ========== -->
+    <section class="section elder-keep" id="say">
+      <header class="section-head"><div class="section-no">07 / 怎麼說</div><div><h2>調解現場，照這個順序說</h2><p class="section-intro">短、慢、具體。先講官方可確認事實，再講自己記得的移動與撞擊，最後講傷害、證據與具體請求。不要猜速度，不確定就說不確定。</p></div></header>
+      <div class="speech" id="speechText">
+        <h3>兩分鐘完整陳述稿</h3>
+        <p>「委員您好。這起事故發生在 2026 年 5 月 6 日上午 10 點 15 分，地點在土城裕民路 262 號附近。我是 B 車，當時沿原方向直行。」</p>
+        <p>「依我的記憶，A 車在我右側偏前，後來向左移動／準備左轉進入 256 巷。我感覺 A 車左側與我車右側發生碰撞，之後我失去意識。方向燈是否有打、打多久，我只說我確定記得的部分；方向燈本身也不等於可以不確認安全就轉向。」</p>
+        <p>「警察初判表寫 A 車疑於路段中左轉、疏於注意同向來車；也寫我疑未注意車前狀況。我願意依完整證據面對最後依法認定的責任，但希望對我不利的部分要有具體證據，說清楚我當時究竟有什麼可避免的動作沒有做，而不是只用一句『後車沒注意』概括。」</p>
+        <p>「事故造成我創傷性蜘蛛膜下腔出血，急診後住院。事故後曾有嗜睡、跌倒、臉部疼痛與牙齒／假牙問題，其中需要醫療判斷的部分以病歷為準。現在已知實支至少 11,408 元，其他照護、交通、財物與精神損害仍在整理。我願意理性協商，但要先把責任、完整損失、保險給付與條款釐清。」</p>
+        <p>「我的要求是：第一，釐清對方左轉或向左切入前是否確認同向來車，以及是否需要事故鑑定；第二，依法處理強制險；第三，依證據逐項賠償合理損害。若今天責任、金額、付款或放棄範圍還不清楚，我不會先簽全部放棄；請把爭點、需補文件與後續日期記錄下來。」</p>
+      </div>
+      <div class="copy-row"><button class="btn primary" type="button" data-copy="#speechText">複製陳述稿</button><button class="btn" type="button" onclick="window.print()">列印帶去調解</button><span class="copy-status" aria-live="polite"></span></div>
+      <div class="callout" id="threeLines"><strong>如果緊張到忘詞，就記三句：</strong><br>①「我當時直行，對方從我右前方要左轉，撞到我。」<br>②「我因腦出血住院，牙齒或假牙也有損失，其他部分依醫療資料說明。」<br>③「詳細的資料和金額，我和信任的親友已經整理好，請看書面。」</div>
+      <h3 style="margin-top:36px">遇到常見說法，這樣回</h3>
+      <div class="response-grid">
+        <article class="response"><p class="their">對方：「我有打方向燈，是你沒讓。」</p><p class="ours"><strong>回：</strong>「方向燈是提醒，不是取得優先權。請一起看 A 車開始向左的時間、兩車相對位置、車損與我有沒有合理反應時間。」</p></article>
+        <article class="response"><p class="their">對方：「你是後車，所以一定全責。」</p><p class="ours"><strong>回：</strong>「本案是同向相鄰且涉及左轉／側向移動，不宜只用一般追撞判斷。請依現場圖、撞擊部位與鑑定說明。」</p></article>
+        <article class="response"><p class="their">對方：「雙方都有受傷，就各自算了。」</p><p class="ours"><strong>回：</strong>「受傷不能取代責任與損害計算。我願意協商，但要依法、依證據處理，也要由保險公司一起說明。」</p></article>
+        <article class="response"><p class="their">委員：「先簽，其他項目之後再談。」</p><p class="ours"><strong>回：</strong>「我可以討論已確定的部分，但尚未列入的醫療、牙科、財物或其他損害，必須明確保留；責任、總額與放棄範圍不清楚，今天就先不簽。」</p></article>
+        <article class="response"><p class="their">對方：「你也有過失，所以不用賠。」</p><p class="ours"><strong>回：</strong>「就算雙方都有過失，也通常是依過失比例減少，不是當然全部免賠。請先確認各自具體疏失與比例。」</p></article>
+        <article class="response"><p class="their">對方：「先撤告，我才付款。」</p><p class="ours"><strong>回：</strong>「撤回告訴後不能再告。我只能在款項實際付清或有可靠擔保，且條款完整確認後處理撤告。」</p></article>
+      </div>
+      <div class="callout"><strong>記住三句安全用語：</strong>「這部分我不確定，我不猜。」／「請把依據與金額寫進紀錄。」／「我要帶回去和信任的親友或律師共同確認，不在現場被催著簽。」</div>
+    </section>
+
+    <!-- ========== 08 求償試算 ========== -->
+    <section class="section" id="claim">
+      <header class="section-head"><div class="section-no">08 / 求償</div><div><h2>求償不是喊總額：一項一項算</h2><p class="section-intro">先列「已發生」與「可能發生」，再附證據。試算只幫忙加總，不代表法院或保險公司一定會全額認定。填的數字只存在這台裝置。</p></div></header>
+      <div class="calc">
+        <div class="calc-grid">
+          <div>
+            <h3>損害金額工作表</h3>
+            <p>已知收據已預填。其他欄位先填有憑證或能說明計算方法的金額；未知先留 0。看護費可先用「日數 × 行情」概算（強制險上限參考：每日 1,200 元、最多 30 日）。</p>
+            <div class="calc-fields" id="calcFields">
+              <div class="calc-field"><label for="medical">醫院自付</label><input id="medical" type="number" min="0" value="1308" data-amount></div>
+              <div class="calc-field"><label for="dentalVisit">牙科自付</label><input id="dentalVisit" type="number" min="0" value="100" data-amount></div>
+              <div class="calc-field"><label for="denture">活動假牙（彈性牙床）</label><input id="denture" type="number" min="0" value="10000" data-amount></div>
+              <div class="calc-field"><label for="futureMedical">後續醫療／復健</label><input id="futureMedical" type="number" min="0" value="0" data-amount></div>
+              <div class="calc-field"><label for="caregiver">必要看護／照護</label><input id="caregiver" type="number" min="0" value="0" data-amount></div>
+              <div class="calc-field"><label for="transport">就醫交通</label><input id="transport" type="number" min="0" value="0" data-amount></div>
+              <div class="calc-field"><label for="aids">手杖／必要輔具</label><input id="aids" type="number" min="0" value="0" data-amount></div>
+              <div class="calc-field"><label for="repair">機車修理／價值減損</label><input id="repair" type="number" min="0" value="0" data-amount></div>
+              <div class="calc-field"><label for="property">安全帽等財物</label><input id="property" type="number" min="0" value="0" data-amount></div>
+              <div class="calc-field"><label for="income">實際工作／收入損失</label><input id="income" type="number" min="0" value="0" data-amount></div>
+              <div class="calc-field"><label for="records">必要證明／病歷費</label><input id="records" type="number" min="0" value="0" data-amount></div>
+              <div class="calc-field"><label for="mental">精神慰撫金主張</label><input id="mental" type="number" min="0" value="0" data-amount></div>
+              <div class="calc-field received"><label for="received">已領強制險給付（會自動扣除）</label><input id="received" type="number" min="0" value="0"></div>
+            </div>
+          </div>
+          <aside class="calc-total">
+            <small>損害合計（未扣強制險）</small><div class="amount" id="calcTotal">NT$ 11,408</div>
+            <small style="margin-top:10px">扣除已領強制險後，向對方請求</small><div class="amount remain" id="calcRemain">NT$ 11,408</div>
+            <p><strong>已憑收據最低實支：</strong><br>NT$ 11,408</p>
+            <hr>
+            <small>這不是「應得確定額」。責任比例、因果、必要性、折舊、保險已給付都會影響最後金額。</small>
+            <button class="btn terracotta" type="button" id="resetCalc" style="margin-top:14px">重設試算</button>
+          </aside>
+        </div>
+      </div>
+      <h3 style="margin-top:34px">每一項怎麼證明</h3>
+      <details open><summary>醫療、牙齒、未來治療</summary><div class="details-body"><ul><li>診斷證明＋病歷＋收據要互相對得上。</li><li>牙齒／假牙要由牙醫記載事故造成的損傷、處置與必要性。</li><li>未來治療不是憑感覺估價；請醫師寫治療項目、期間、次數與預估費用。</li></ul></div></details>
+      <details><summary>親友照護、看護與輔具</summary><div class="details-body"><ul><li>親屬無償照護仍可能有相當看護費價值（實務見解支持），但需證明長輩確實需要及期間。</li><li>請醫師具體寫「需要他人照護」及程度；協助照護的親友整理照護紀錄。</li><li>親友照護費與同一時間、同一親友的薪資損失不可重複計算。</li></ul></div></details>
+      <details><summary>精神慰撫金</summary><div class="details-body"><p>民法第 195 條允許身體、健康遭不法侵害時請求相當金額。沒有固定價目表；法院通常綜合傷勢、治療、後遺症、生活影響、雙方身分經濟與過失情形。長輩應用就醫紀錄、睡眠／情緒／生活改變與親友觀察具體說明，不要只寫「很痛苦」。</p></div></details>
+      <details><summary>財物、修車與收入</summary><div class="details-body"><ul><li>修車先拍照，再取品項清楚估價單；若修復費遠高於事故前價值，可能以事故前價值為衡量。</li><li>安全帽、衣物、手機等舊物通常會考量使用年限與折舊。</li><li>若長輩仍有工作，要用薪資、報稅、出勤與醫囑休養期間證明，不是只報一個整數。</li></ul></div></details>
+    </section>
+
+    <!-- ========== 09 強制險 ========== -->
+    <section class="section" id="insurance">
+      <header class="section-head"><div class="section-no">09 / 保險</div><div><h2>強制險可以先走，不必等責任比例</h2><p class="section-intro">強制汽車責任保險的核心是：因交通事故受傷，不論加害人有無過失，受害人都可以直接向對方的保險公司請求基本給付——不需要對方同意、不需要對方陪同辦理。它處理人身基本保障，不賠機車等財物。</p></div></header>
+      <div class="split">
+        <div class="panel teal">
+          <h3>第一步：找到 A 車投保的保險公司</h3>
+          <ol>
+            <li>調解或警詢時，直接請對方提供投保的保險公司與保單資訊。</li>
+            <li>問不到就撥 <strong>0800-825-688</strong>（保險事業發展中心），持登記聯單詢問查詢管道。</li>
+            <li>若對方根本沒投保、或屬肇事逃逸 → 改向「汽車交通事故特別補償基金」申請：<strong>0800-565-678</strong>。</li>
+          </ol>
+          <p>找到後索取理賠申請書，備妥：身分證明、事故登記聯單影本、診斷書、醫療與牙科收據、存摺影本。保留送件清單、收件日期、承辦人與案件編號。</p>
+        </div>
+        <div class="panel">
+          <h3>目前重要上限（事故日 2026／05／06 適用）</h3>
+          <p><strong>傷害醫療費用：</strong>每一受害人、每一事故合計最高 20 萬元，且限必須、合理的實際支出。</p>
+          <ul><li>義齒：每缺損一齒最高 1 萬元，5 齒以上合計最高 5 萬元（活動假牙 10,000 元收據記得附牙位診斷）。</li><li>接送費用：合理門診、轉診、出院交通，最高 2 萬元。</li><li>看護：每日最高 1,200 元，最多 30 日；居家看護通常要有醫師證明。</li><li>其他醫療材料／輔助器材（含手杖等）：最高 2 萬元，需醫療必要。</li></ul>
+        </div>
+      </div>
+      <div class="callout"><strong>申請也有期限：</strong>強制險保險金請求權，自知有損害發生及保險人時起 2 年——本案概略至 2028 年 5 月上旬，但不要拖，資料齊了就送。</div>
+      <div class="callout warning"><strong>別重複領：</strong>強制險給付依法視為對方損害賠償的一部分。調解總額要寫清楚「是否包含已領／待領強制險」，避免同一項目重複計算或被不明扣除。第 8 節試算表已幫你自動扣除已領金額。</div>
+      <div class="callout"><strong>事故日在 2026／05／06：</strong>2026／07／01 才生效的死亡／失能額度提高，不宜直接套用到本案。好消息是本案目前最相關的傷害醫療上限 20 萬元，在修法前後都沒有改變。若未來醫師判定失能，請讓保險公司依事故日適用版本書面說明。</div>
+    </section>
+
+    <!-- ========== 10 簽字檢查 ========== -->
+    <section class="section" id="settlement">
+      <header class="section-head"><div class="section-no">10 / 簽字</div><div><h2>和解可以簽，但 8 件事要寫清楚</h2><p class="section-intro">區公所調解不是聊天紀錄。經法院核定的民事調解，效力如確定判決；內容寫錯或放棄太多，後悔通常很難補救。</p></div></header>
+      <div class="term-list">
+        <div class="term"><strong>1. 當事人與事故</strong><br>姓名、身分、事故日期地點、A／B 車要明確。</div>
+        <div class="term"><strong>2. 總額與逐項範圍</strong><br>醫療、牙科、照護、財物、慰撫金各是多少。</div>
+        <div class="term"><strong>3. 強制險是否包含</strong><br>已領、待領、由誰申請、是否從總額扣除。</div>
+        <div class="term"><strong>4. 付款時間與方式</strong><br>日期、帳戶、現金或匯款；收到才算。</div>
+        <div class="term"><strong>5. 分期的保護</strong><br>任何一期遲延，剩餘款全部到期；約定遲延利息與執行。</div>
+        <div class="term"><strong>6. 尚未確定的損害是否保留</strong><br>仍有醫療、牙科、財物或其他項目未確認時，明列保留範圍與處理方式。</div>
+        <div class="term"><strong>7. 何時撤回告訴</strong><br>以「款項全數入帳後」或有可靠擔保後才撤。</div>
+        <div class="term"><strong>8. 違約怎麼辦</strong><br>法院核定、執行名義、違約責任與送達地址。</div>
+      </div>
+      <div class="danger-clause" style="margin-top:24px"><h3>看到這類句子，先停下來</h3><p>「乙方收受本款後，就本事故之一切民事、刑事及其他請求權全部拋棄，不得再有任何主張。」</p><p><strong>風險：</strong>可能連尚未出現的後遺症、牙科後續、保險差額、財物或刑事告訴一起放掉。</p></div>
+      <div class="speech" id="reservationText" style="margin-top:22px">
+        <h3>仍有損害未確定時的保留條款範例</h3>
+        <p>「本次給付僅處理截至簽署日已確認並列明之＿＿＿＿項目。對於尚未列入或仍待確認、且日後能以單據、醫療意見或其他證據證明與本事故有相當因果關係之醫療、牙科、照護、財物及其他合理損害，B 方不因本調解而拋棄；雙方另行協議，協議不成時，B 方仍得依法主張。」</p>
+        <p class="tiny">範例必須依實際協商、保險給付與律師意見修改，不能原封不動套用。</p>
+      </div>
+      <div class="copy-row"><button class="btn primary" type="button" data-copy="#reservationText">複製保留條款</button><span class="copy-status" aria-live="polite"></span></div>
+    </section>
+
+    <!-- ========== 11 後續程序 ========== -->
+    <section class="section" id="next">
+      <header class="section-head"><div class="section-no">11 / 後續</div><div><h2>調解不成立，不等於沒路了</h2><p class="section-intro">請調解委員會開「調解不成立證明」。刑事、民事、保險與鑑定是不同軌道，可以依期限與證據同步安排。</p></div></header>
+      <div class="route" aria-label="後續程序流程">
+        <div class="route-step">整理證據<small>病歷、收據、車損、影像</small></div>
+        <div class="route-step">確認告訴<small>6 個月期限優先</small></div>
+        <div class="route-step">申請／聲請鑑定<small>一般申請事故後 6 個月</small></div>
+        <div class="route-step">調解或法院調解<small>逐項金額、條款審閱</small></div>
+        <div class="route-step">民事起訴／附帶民事<small>必要時請律師／法扶</small></div>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>刑事：過失傷害</h3>
+          <ul><li>刑法第 284 條處罰過失傷害；第 287 條規定為告訴乃論。</li><li>刑事訴訟法第 237 條：知悉犯人起 6 個月內告訴。</li><li>可用書狀或言詞向檢察官／司法警察官提出；言詞應製作筆錄。</li><li>撤回後不能再告；不要把撤告當成空白支票。</li></ul>
+          <div class="callout warning"><strong>本案保守提醒：</strong>若事故當天已知對方身分，先以 2026／11／06 前完成為行動底線；實際起算與期間計算請立即向承辦單位或律師確認。</div>
+        </div>
+        <div class="panel">
+          <h3>民事：損害賠償（兩條路）</h3>
+          <ul><li><strong>直接民事訴訟：</strong>不必等刑事結果，但要繳裁判費、自行舉證。</li><li><strong>刑事附帶民事：</strong>若檢察官起訴對方，可在刑事程序中附帶提出，<strong>原則上免繳裁判費</strong>——這是省錢的重要路徑，偵查階段還不能提，起訴後再提。</li><li>民法第 184、191-2 條是侵權與動力車輛責任基礎；第 193 條涵蓋增加生活需要（醫療、看護、輔具），第 195 條是精神慰撫金。</li><li>時效：知悉起 2 年（概略至 2028／05／06），自事故起最長 10 年；不要拖到最後。</li><li>若雙方都有過失，法院可依民法第 217 條按比例減少賠償。</li></ul>
+        </div>
+      </div>
+      <h3 style="margin-top:28px">期限總表（一張看完）</h3>
+      <table class="fact-table">
+        <tbody>
+          <tr><th>公所調解期日</th><td>依通知書（可在頁首填入倒數）。有正當理由可洽調解會改期。</td></tr>
+          <tr><th>刑事過失傷害告訴</th><td><strong>依現有資料保守以 2026／11／06 前完成</strong>。自知悉犯人起 6 個月；報案不等於告訴，實際起算請提前向承辦單位確認。</td></tr>
+          <tr><th>行車事故鑑定申請</th><td><strong>一般申請原則為事故日起 6 個月內</strong>。本頁倒數為行動提醒；已進入偵查／審判改聲請囑託，規費及程序以承辦機關最新說明為準。</td></tr>
+          <tr><th>鑑定覆議</th><td>收受鑑定意見翌日起 30 日內，以一次為限（規費依裁決處公告）。</td></tr>
+          <tr><th>強制險保險金請求</th><td>自知有損害及保險人起 2 年（概略至 2028／05 上旬）。資料齊就早送。</td></tr>
+          <tr><th>民事損害賠償</th><td>知悉起 2 年（概略至 2028／05／06）；自事故起最長 10 年。</td></tr>
+        </tbody>
+      </table>
+      <h3 style="margin-top:28px">金額不同，程序可能不同</h3>
+      <p>以金錢給付為請求，原則上 10 萬元以下是小額程序；50 萬元以下常屬簡易程序，超過則可能是通常程序。車禍損害內容複雜時，法院也可能調整適用程序。起訴前應把被告、請求金額、事實、法律依據與證據整理成表。</p>
+      <div class="callout"><strong>可找誰：</strong>法律扶助基金會新北分會（02）2973-7778，新北市三重區重新路四段 12 號 5 樓（2026／7／17 官網核對）；先電話預約並詢問資格。土城區公所也有調解與免費法律諮詢資源。</div>
+    </section>
+
+    <!-- ========== 12 調解當天 ========== -->
+    <section class="section elder-keep" id="meeting">
+      <header class="section-head"><div class="section-no">12 / 當天</div><div><h2>調解那天會發生什麼？</h2><p class="section-intro">先知道流程，就不會慌。長輩不是一個人上場——信任親友的任務是整理、記錄與提醒，不是替長輩說出本人不確定的事。</p></div></header>
+      <h3>先知道 6 件事，心就安一半</h3>
+      <div class="issue-list">
+        <article class="issue"><h3>公所調解免費</h3><p>不用繳費、不用請律師也能進行；委員是中立第三方，不是法官，不會「判罪」。</p></article>
+        <article class="issue"><h3>信任的親友可以陪同</h3><p>長輩全程可有信任的親友在旁；聽不清楚、需要休息都可以直接說。</p></article>
+        <article class="issue"><h3>流程大約這樣</h3><p>報到 → 委員說明 → 兩邊各自陳述 → 討論協商 → 有共識就作成調解書送法院核定；沒共識就記錄不成立。</p></article>
+        <article class="issue"><h3>時間不會太長</h3><p>通常約 30 至 60 分鐘；不舒服可以請求暫停或改期。</p></article>
+        <article class="issue"><h3>不必當場決定</h3><p>金額不滿意、條款看不懂，都可以說「帶回去考慮」，再約下一次。這是權利，不是失禮。</p></article>
+        <article class="issue"><h3>當天要帶的東西</h3><p>身分證、印章、開會通知書；文件資料（初判表、診斷書、收據）可由親友協助準備。</p></article>
+      </div>
+      <h3 style="margin-top:30px">實戰三步驟</h3>
+      <details open><summary>出門前：一個資料夾、三份表</summary><div class="details-body"><ol><li><strong>資料夾：</strong>身分證、印章、通知書、初判表、現場圖、診斷、病歷、收據、照片、保險資料，正本與影本分開。</li><li><strong>一頁時間線：</strong>事故、住院、回診、跌倒、牙科、費用日期。</li><li><strong>一頁求償表：</strong>項目、金額、證據、是否已領強制險。</li><li><strong>一頁底線表：</strong>哪些可談、哪些需補證、哪些條款今天不能簽。</li></ol><p>👉 按下方「一鍵列印調解隨身包」，這幾張表會自動帶入你在本頁填的金額與勾選狀態。</p></div></details>
+      <details open><summary>進行中：只做四件事</summary><div class="details-body"><ol><li>按兩分鐘稿說，不和對方互罵。</li><li>要求把對方金額、理由、保險與付款條件寫下。</li><li>不懂條款就逐句問；要求休息、放大閱讀、帶回審閱。</li><li>親友記錄「誰說什麼、補什麼、下次何時」，不要只記最後總額。</li></ol></div></details>
+      <details><summary>沒有共識：怎麼結束才安全</summary><div class="details-body"><p>平靜說：「今天還有責任、醫療因果與後續費用未釐清，先請記錄雙方差距，並發給調解不成立證明。我方會在法定期限內處理告訴、鑑定、保險與民事權利。」不要因「都來了」就硬簽。</p></div></details>
+      <div class="copy-row"><button class="btn terracotta" type="button" id="packBtn">🖨 一鍵列印「調解隨身包」</button><span class="tiny muted">內含：案件摘要、陳述稿、應對表、求償表（帶入試算金額）、證據勾選狀態、重要電話。</span></div>
+    </section>
+
+    <!-- ========== 13 狀況手冊 ========== -->
+    <section class="section elder-keep" id="scenarios">
+      <header class="section-head"><div class="section-no">13 / 手冊</div><div><h2>常見狀況應對手冊：遇到什麼，都有準備</h2><p class="section-intro">每一種狀況都寫好「怎麼做」和「一句心法」。先看過一遍，真的遇到就不慌。</p></div></header>
+
+      <h3>在調解桌上</h3>
+      <details><summary>狀況 1：對方當天不出席</summary><div class="details-body"><p><strong>怎麼做：</strong>請委員記錄「對方無故不到、調解不成立」，並當場申請「調解不成立證明書」。回家後照期限走：確認告訴、申請鑑定、送強制險。</p><p><strong>心法：</strong>他不來，損失的不是我們——程序照走，權利一項不少。</p></div></details>
+      <details><summary>狀況 2：對方態度差、大聲指責</summary><div class="details-body"><p><strong>怎麼做：</strong>不對罵、不辯速度細節。轉頭對委員說：「請把對方剛才的說法記入紀錄。」然後把話題拉回文件：初判表怎麼寫、診斷書怎麼寫。</p><p><strong>心法：</strong>誰激動誰失分；文件會替我們說話。</p></div></details>
+      <details><summary>狀況 3：對方出的金額很低</summary><div class="details-body"><p><strong>怎麼做：</strong>不當場答應、也不用翻臉。請委員把對方的金額與理由寫進紀錄，回一句：「差距太大，我們帶回評估，下次答覆。」也可以提議先處理無爭議的部分（如已有單據的醫療費）。</p><p><strong>心法：</strong>第一次出價通常不是最後一次；急著點頭的人才吃虧。</p></div></details>
+      <details><summary>狀況 4：對方拿「你也有過失」壓價</summary><div class="details-body"><p><strong>怎麼做：</strong>回：「比例還沒認定，我們已申請（或將申請）鑑定。今天先確認損害總額，比例另談。」不自己先承認任何比例數字。</p><p><strong>心法：</strong>先算清楚整塊餅，再談怎麼切；順序顛倒就被牽著走。</p></div></details>
+      <details><summary>狀況 5：委員勸「差不多就簽一簽」</summary><div class="details-body"><p><strong>怎麼做：</strong>感謝委員好意，說明：「責任、保險給付、完整費用或部分損害仍未確認，全面拋棄的條款我們不能簽。可以先處理已確定的部分並加保留條款，或另約時間。」</p><p><strong>心法：</strong>委員求成立是職責，護住權利是我們的職責；兩者不衝突。</p></div></details>
+
+      <h3 style="margin-top:26px">程序與文書</h3>
+      <details><summary>狀況 6：對方反過來對長輩提告</summary><div class="details-body"><p><strong>先建立心理：</strong>初判表雙方都有記載，對方本來就「有權」提告，而且這常是談判籌碼——收到不用嚇到，天不會塌。</p><p><strong>怎麼做：</strong>①看清楚文書上的身分（被告／關係人／證人）與應到時間。②由信任的親友陪同前往。③照第 4 節的回憶整理如實陳述，不記得就說不記得。④必要時委任律師（可先問法扶）。⑤筆錄簽名前逐字看，不符處請求更正。</p><p><strong>心法：</strong>我方傷勢重、對方肇因記載具體；如實陳述就是最好的防禦。</p></div></details>
+      <details><summary>狀況 7：收到警局通知書或地檢署傳票</summary><div class="details-body"><p><strong>怎麼做：</strong>先看案由、身分、應到時間地點與承辦股別；有正當理由（就醫、行動不便）可來電請求改期。當天帶身分證、相關文件，信任的親友同行。</p><p><strong>心法：</strong>傳喚是程序，不是定罪；愈平常心，說得愈清楚。</p></div></details>
+      <details><summary>狀況 8：想起新細節，或發現記憶有出入</summary><div class="details-body"><p><strong>怎麼做：</strong>不慌、不硬拗。先和信任的親友討論，評估是否補充陳述；已做過的筆錄若與記憶不符，可在下次程序中說明更正。</p><p><strong>心法：</strong>記憶會補齊很正常；誠實修正永遠比硬撐可信。</p></div></details>
+
+      <h3 style="margin-top:26px">保險與金錢</h3>
+      <details><summary>狀況 9：保險公司來電問細節、想口頭談和解</summary><div class="details-body"><p><strong>怎麼做：</strong>只確認對方身分與案件編號；不在電話中承諾比例、金額或「算了」。說：「請改用書面或郵件，我要和信任的親友共同確認。」</p><p><strong>心法：</strong>電話中說的話可能被記錄；書面才算數，也才有時間想。</p></div></details>
+      <details><summary>狀況 10：對方或其親友私下來電、登門拜訪</summary><div class="details-body"><p><strong>怎麼做：</strong>客氣但不談條件：「這件事我要先和信任的親友確認」「請在調解會上說」。若糾纏或言語威脅，記下時間與內容，必要時報警 110。</p><p><strong>心法：</strong>私下答應的，桌上都不算；一律導回正式管道。</p></div></details>
+      <details><summary>狀況 11：擔心對方賠不起</summary><div class="details-body"><p><strong>怎麼做：</strong>強制險部分不受對方財力影響——直接向對方投保的保險公司請領；對方沒投保就找特別補償基金。民事部分要求「分期＋一期未付全部到期＋法院核定」，未付可強制執行。</p><p><strong>心法：</strong>制度就是為了「怕拿不到錢」設計的；用制度，不用賭人品。</p></div></details>
+      <details><summary>狀況 12：調解成立後，對方不付款</summary><div class="details-body"><p><strong>怎麼做：</strong>等法院核定的調解書送達（效力同確定判決），憑它向法院聲請強制執行（查封、扣薪等）。當初寫進去的「一期未付全部到期」條款此時發揮作用。</p><p><strong>心法：</strong>簽得好，就不怕賴；所以簽之前那 8 項檢查才那麼重要。</p></div></details>
+
+      <h3 style="margin-top:26px">身體與心情</h3>
+      <details><summary>狀況 13：調解當天身體不舒服、緊張到說不出話</summary><div class="details-body"><p><strong>怎麼做：</strong>可以請求改期（可由信任的親友協助聯絡調解會）；或由親友依文件說明事實框架，長輩只需要確認「是」或「不是」。忘詞就用三句極簡版（第 7 節）。</p><p><strong>心法：</strong>身體第一，程序可以等；改期不會損失任何權利。</p></div></details>
+      <details><summary>狀況 14：出現新症狀、傷勢有變化</summary><div class="details-body"><p><strong>怎麼做：</strong>立刻就醫，並告訴醫師「5 月 6 日車禍撞到頭」；請醫師把症狀與可能關聯寫進病歷。回家記下日期與情形。這會影響後續求償範圍——調解時記得保留後續醫療權利。</p><p><strong>心法：</strong>先就醫、再記錄、後求償；順序對了，權利就在。</p></div></details>
+    </section>
+
+    <!-- ========== 14 醫師記載清單 ========== -->
+    <section class="section" id="doctor">
+      <header class="section-head"><div class="section-no">14 / 醫療補證</div><div><h2>仍有症狀或需要補強因果證明時，再使用這張清單</h2><p class="section-intro">治療已大致告一段落，不必為求償而勉強就醫。只有仍有真實症狀、牙科或照護因果尚未記載，或承辦單位要求補充證明時，才請醫師依實際情況評估並記入病歷或診斷書。</p></div></header>
+      <div class="speech" id="doctorList">
+        <h3>可請醫師依實際情況評估的 8 件事</h3>
+        <p>1. 診斷名稱、出血部位與嚴重程度。</p>
+        <p>2. 建議休養期間；是否不宜騎車、不宜操持家務。</p>
+        <p>3. 是否需要專人看護（全日／半日），建議期間與每日時數。</p>
+        <p>4. 嗜睡、步態不穩、平衡變差與 6 月三次跌倒，是否可能與本次頭部外傷（創傷性蜘蛛膜下腔出血）相關。</p>
+        <p>5. 手杖、扶手、防滑與居家安全改裝，是否有醫療上的必要。</p>
+        <p>6. 臉部／眼下疼痛：傷勢名稱，是否需轉診眼科、口腔顎面外科或整形外科。</p>
+        <p>7. 是否需要復健、神經心理評估或其他轉診。</p>
+        <p>8. 牙科部分另請牙醫師記載：缺損牙位、原假牙狀態、與事故的關聯、重製必要性與費用。</p>
+      </div>
+      <div class="copy-row"><button class="btn primary" type="button" data-copy="#doctorList">複製清單</button><button class="btn" type="button" onclick="window.print()">列印帶去回診</button><span class="copy-status" aria-live="polite"></span></div>
+      <div class="callout warning"><strong>補證原則：</strong>只陳述確實存在的症狀，不要求醫師配合預設結論。若事故後的嗜睡、跌倒、臉痛等已經改善，但當時沒有完整記錄，可攜帶既有資料請醫師判斷是否仍能專業說明；無法確認時就保留為「待證」，不要誇大。</div>
+    </section>
+
+    <!-- ========== 15 重要電話 ========== -->
+    <section class="section" id="phones">
+      <header class="section-head"><div class="section-no">15 / 電話</div><div><h2>重要電話與地點，一頁找齊</h2><p class="section-intro">全部是政府機關與公益單位的公開電話，沒有任何個人資料。機關電話可能變動，撥打前以官方公告為準。</p></div></header>
+      <div class="phone-grid">
+        <div class="phone"><b>土城分局交通分隊（事故承辦、筆錄、告訴確認）</b><a class="tel" href="tel:0222666090">02-2266-6090</a><small>確認告訴狀態、案號、申請現場照片。</small></div>
+        <div class="phone"><b>新北市交通事件裁決處（行車事故鑑定）</b><a class="tel" href="tel:0289786101,510">02-8978-6101 轉 510</a><small>新北市板橋區中山路 1 段 143 號 2 樓；鑑定規費 3,000 元。</small></div>
+        <div class="phone"><b>新北市立土城醫院（病歷、診斷書）</b><a class="tel" href="tel:0222630588">02-2263-0588</a><small>新北市土城區金城路二段 6 號；病歷室申請帶身分證。</small></div>
+        <div class="phone"><b>強制險疑問（保險事業發展中心）</b><a class="tel" href="tel:0800825688">0800-825-688</a><small>查詢對方投保公司管道、理賠爭議諮詢。</small></div>
+        <div class="phone"><b>特別補償基金（對方未投保／肇逃時）</b><a class="tel" href="tel:0800565678">0800-565-678</a><small>對方沒保強制險，改向基金申請同等基本保障。</small></div>
+        <div class="phone"><b>法律扶助基金會新北分會</b><a class="tel" href="tel:0229737778">02-2973-7778</a><small>新北市三重區重新路四段 12 號 5 樓（2026／7／17 官網核對）；先電話預約、詢問資格。</small></div>
+        <div class="phone"><b>土城區公所（調解委員會）</b><a href="https://www.tucheng.ntpc.gov.tw/home.jsp?id=6918f79d690935a2" target="_blank" rel="noopener">官網調解專區</a><small>調解業務、改期聯絡；電話以開會通知書記載為準。</small></div>
+        <div class="phone"><b>緊急狀況</b><a class="tel" href="tel:119">119 救護</a>／<a class="tel" href="tel:110">110 報警</a><small>神經症狀惡化直接送急診；受騷擾威脅時報警。</small></div>
+      </div>
+      <div class="callout"><strong>線上工具：</strong>「新北市交通事故 E 化系統」可線上申請現場圖、照片與初判表：<a href="https://eacc-inv.ntpd.gov.tw/TcpAppWeb" target="_blank" rel="noopener">eacc-inv.ntpd.gov.tw/TcpAppWeb</a></div>
+    </section>
+
+    <!-- ========== 16 官方來源 ========== -->
+    <section class="section" id="sources">
+      <header class="section-head"><div class="section-no">16 / 來源</div><div><h2>法律與程序，查的是官方原文</h2><p class="section-intro">本頁法律資訊核對日期：2026 年 7 月 17 日。法規會改，送件前仍要再看最新版本或讓律師確認。相似判決因事實不同，本頁沒有把它當成本案責任結論。</p></div></header>
+      <div class="source-list">
+        <div class="source"><b>道路交通安全規則</b><small>第 94、99、102、109 條；全國法規資料庫</small><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013" target="_blank" rel="noopener">查看官方全文</a></div>
+        <div class="source"><b>民法第 184 條</b><small>一般侵權行為責任</small><a href="https://mojlaw.moj.gov.tw/LawContentExtent.aspx?LSID=FL001351&LawNo=184&media=print" target="_blank" rel="noopener">查看官方條文</a></div>
+        <div class="source"><b>民法第 191-2 條</b><small>動力車輛使用中致損害</small><a href="https://mojlaw.moj.gov.tw/LawContentExtent.aspx?LSID=FL001351&LawNo=191-2&media=print" target="_blank" rel="noopener">查看官方條文</a></div>
+        <div class="source"><b>民法第 193、195、197、217 條</b><small>生活需要、慰撫金、時效與過失相抵</small><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=B0000001" target="_blank" rel="noopener">查看民法全文</a></div>
+        <div class="source"><b>刑法第 284、287 條</b><small>過失傷害與告訴乃論</small><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0000001" target="_blank" rel="noopener">查看官方全文</a></div>
+        <div class="source"><b>刑事訴訟法第 237、238、242 條</b><small>6 個月、撤告不可再告、告訴方式</small><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0010001" target="_blank" rel="noopener">查看官方全文</a></div>
+        <div class="source"><b>鄉鎮市調解條例第 27、30 條</b><small>法院核定效力與不成立證明</small><a href="https://mojlaw.moj.gov.tw/LawContentExtent.aspx?LSID=FL010107&LawNo=27&media=print" target="_blank" rel="noopener">查看第 27 條</a>・<a href="https://mojlaw.moj.gov.tw/LawContentExtent.aspx?LSID=FL010107&LawNo=30&media=print" target="_blank" rel="noopener">查看第 30 條</a></div>
+        <div class="source"><b>強制汽車責任保險法</b><small>第 7 條「不論加害人有無過失」；第 32 條給付視為賠償一部分</small><a href="https://law.fsc.gov.tw/LawContent.aspx?id=FL006889" target="_blank" rel="noopener">金融監督管理委員會</a></div>
+        <div class="source"><b>強制汽車責任保險給付標準</b><small>傷害醫療、義齒、交通、看護與輔具上限</small><a href="https://law.fsc.gov.tw/LawContent.aspx?id=FL006901" target="_blank" rel="noopener">金融監督管理委員會</a></div>
+        <div class="source"><b>司法院：被害人如何請求賠償</b><small>直接民事訴訟與刑事附帶民事的差異與時點</small><a href="https://www.judicial.gov.tw/tw/lp-1303-1-xCat-02-1-40.html" target="_blank" rel="noopener">司法院常見問答</a></div>
+        <div class="source"><b>警察事故資料申請</b><small>現場圖／照片 7 日後、初步分析研判表 30 日後</small><a href="https://www.npa.gov.tw/ch/app/faq/view?id=2144&module=faq&serno=A1084129" target="_blank" rel="noopener">內政部警政署 FAQ</a></div>
+        <div class="source"><b>新北市交通事故 E 化系統</b><small>線上申請現場圖、照片、初判表</small><a href="https://eacc-inv.ntpd.gov.tw/TcpAppWeb" target="_blank" rel="noopener">前往系統</a></div>
+        <div class="source"><b>新北市事故鑑定</b><small>申請文件、程序與每案 3,000 元</small><a href="https://www.tad.ntpc.gov.tw/Webpage.aspx?entry=25" target="_blank" rel="noopener">新北市交通事件裁決處</a></div>
+        <div class="source"><b>新北市事故覆議</b><small>收受鑑定意見翌日起 30 日、一次為限</small><a href="https://www.traffic.ntpc.gov.tw/home.jsp?id=1379c4800164fbbf" target="_blank" rel="noopener">新北市政府交通局</a></div>
+        <div class="source"><b>土城區調解委員會</b><small>聲請方式、表單、調解特性與期限提醒</small><a href="https://www.tucheng.ntpc.gov.tw/home.jsp?id=6918f79d690935a2" target="_blank" rel="noopener">新北市土城區公所</a></div>
+        <div class="source"><b>民事小額訴訟說明</b><small>程序、證據與法院調解</small><a href="https://www.judicial.gov.tw/tw/cp-1654-4873-0557c-1.html" target="_blank" rel="noopener">司法院</a></div>
+        <div class="source"><b>法律扶助基金會服務據點</b><small>新北分會聯絡與地址</small><a href="https://www.laf.org.tw/place" target="_blank" rel="noopener">查看官方據點</a></div>
+        <div class="source"><b>強制險申請文件說明</b><small>理賠申請與相關證明文件</small><a href="https://www.cali.org.tw/files/Consumer1/QA9-3V3.pdf" target="_blank" rel="noopener">強制汽車責任保險網站</a></div>
+      </div>
+      <h3 style="margin-top:36px">本頁整理過的原始資料</h3>
+      <ol class="document-list">
+        <li>機車事故調解與求償完整整理報告（依新增證據修訂版）</li>
+        <li>機車事故法律與程序依據詳細補充報告</li>
+        <li>長輩事故相關回憶與部分 AI 語音轉錄文字（已校正明顯錯字並整理為第 4 節）</li>
+        <li>警察道路交通事故當事人登記聯單</li>
+        <li>警察道路交通事故現場圖</li>
+        <li>警察道路交通事故初步分析研判表</li>
+        <li>醫院診斷證明書、出院照護計畫與醫療收據</li>
+        <li>牙科收據與活動假牙（彈性牙床）收據</li>
+      </ol>
+      <div class="callout danger"><strong>重要限制：</strong>AI 轉錄可能辨識錯誤；出院日期文件不一致；後續跌倒、牙齒、照護與事故的因果仍需醫師／牙醫及其他證據支持。本頁是案件整理與行動工具，不是律師正式法律意見，也不保證調解或訴訟結果。</div>
+    </section>
+
+    <!-- ========== 隨身包（僅列印時出現） ========== -->
+    <section id="printPack" aria-hidden="true">
+      <h2>調解隨身包（匿名列印版）</h2>
+      <p class="tiny">產生時間：<span id="packTime"></span>｜當事人以 A 車／B 車代稱，已盡量移除直接識別資料。</p>
+      <div class="pack-block">
+        <h3>一、案件摘要</h3>
+        <table>
+          <tbody>
+            <tr><th>事故</th><td>2026／05／06 10:15，新北市土城區裕民路 262 號附近（無號誌、速限 50、晴）。</td></tr>
+            <tr><th>兩車</th><td>A 車＝普通輕型機車，路段中左轉欲入 256 巷；B 車＝長輩，普通重型機車，同向直行。</td></tr>
+            <tr><th>初判表</th><td>A 車「疑於路段中左轉彎行駛，疏於注意同向來車」；B 車「疑疏於注意車前狀況」。非最終責任比例。</td></tr>
+            <tr><th>主要傷勢</th><td>創傷性蜘蛛膜下腔出血；5/6 急診（10:32–22:17）後住院，5/8–5/9 出院（日期待院方確認）；後續嗜睡、6 月跌倒 3 次、臉部疼痛、假牙遺失。</td></tr>
+            <tr><th>我的調解日期</th><td id="packMediation">－</td></tr>
+            <tr><th>期限底線</th><td>刑事告訴與一般事故鑑定：依現有資料保守以 2026／11／06 前完成；實際期限需提前向承辦單位確認。民事與強制險：概略 2028／05 前，愈早愈好。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pack-block">
+        <h3>二、兩分鐘陳述稿</h3>
+        <p>「委員您好。事故發生在 2026 年 5 月 6 日上午 10 點 15 分，土城裕民路 262 號附近。我是 B 車，當時沿原方向直行。依我的記憶，A 車在我右側偏前，後來向左移動、準備左轉進 256 巷，我感覺 A 車左側與我車右側碰撞，之後我失去意識。」</p>
+        <p>「警察初判表寫 A 車疑於路段中左轉、疏於注意同向來車；也寫我疑未注意車前狀況。我願意依完整證據面對最後依法認定的責任，但對我不利的部分請提出具體證據。」</p>
+        <p>「事故造成我創傷性蜘蛛膜下腔出血，急診後住院；事故後曾有嗜睡、跌倒、臉部疼痛與牙齒問題，其中需要醫療判斷的部分以病歷為準。已知實支至少 11,408 元，其他損害仍在整理。我願意理性協商，但請先釐清責任、強制險、完整金額與條款，依證據逐項談。若今天談不完，我不會先簽全部放棄。」</p>
+        <p><strong>忘詞三句：</strong>①我當時直行，對方從右前方要左轉，撞到我。②我因腦出血住院，牙齒或假牙也有損失，其他部分依醫療資料說明。③詳細資料我和信任的親友已整理好，請看書面。</p>
+        <p><strong>護身三句：</strong>①這部分我不確定，我不猜。②請把依據與金額寫進紀錄。③我要帶回去看，今天不簽。</p>
+      </div>
+      <div class="pack-block">
+        <h3>三、對方常見說法與回應</h3>
+        <table>
+          <thead><tr><th style="width:38%">對方說</th><th>我們回</th></tr></thead>
+          <tbody>
+            <tr><td>「我有打方向燈，是你沒讓。」</td><td>方向燈是提醒不是優先權；請看 A 車開始向左的時間、相對位置、車損與反應時間。</td></tr>
+            <tr><td>「你是後車，一定全責。」</td><td>本案是同向相鄰＋左轉側向移動，不是一般追撞；請依現場圖、撞擊部位與鑑定說明。</td></tr>
+            <tr><td>「雙方都有受傷，就算了。」</td><td>受傷不能取代責任與損害計算；依法、依證據、請保險公司一起處理。</td></tr>
+            <tr><td>「先簽，之後再談醫療。」</td><td>可簽已確定部分，但必須明文保留後續醫療與未列項目，否則今天不簽。</td></tr>
+            <tr><td>「你也有過失，所以不用賠。」</td><td>雙方有過失是按比例減少，不是全部免賠；先確認具體疏失與比例。</td></tr>
+            <tr><td>「先撤告，我才付款。」</td><td>撤告後不能再告；款項付清或有可靠擔保、條款確認後才處理撤告。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pack-block">
+        <h3>四、求償明細（自本頁試算表帶入）</h3>
+        <table>
+          <thead><tr><th>項目</th><th style="width:28%">金額（NT$）</th></tr></thead>
+          <tbody id="packClaims"></tbody>
+        </table>
+        <p class="tiny">金額為我方工作表整理，非最終請求額；責任比例、因果、必要性與保險給付都會影響結果。</p>
+      </div>
+      <div class="pack-block">
+        <h3>五、證據清單（✓＝已備妥）</h3>
+        <div class="pack-cols"><ul id="packEvidence"></ul></div>
+      </div>
+      <div class="pack-block">
+        <h3>六、今天的底線</h3>
+        <ul>
+          <li>不簽「一切民刑事權利全部拋棄」；仍有未確認損害時，必須明列保留範圍。</li>
+          <li>撤回告訴＝款項全數入帳後（或有可靠擔保）才辦。</li>
+          <li>調解書必寫：總額與逐項、強制險是否包含、付款日期方式、一期未付全部到期。</li>
+          <li>不確定的事不猜；金額與理由都請寫進紀錄；可帶回審閱。</li>
+        </ul>
+      </div>
+      <div class="pack-block">
+        <h3>七、重要電話</h3>
+        <ul>
+          <li>土城分局交通分隊 02-2266-6090（告訴、案號、現場照片）</li>
+          <li>裁決處鑑定 02-8978-6101 轉 510（板橋區中山路 1 段 143 號 2 樓）</li>
+          <li>土城醫院 02-2263-0588（病歷、診斷書）</li>
+          <li>強制險疑問 0800-825-688／特別補償基金 0800-565-678</li>
+          <li>法扶新北分會 02-2973-7778｜緊急 119／110</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <div><h2>最後只記三件事</h2><p>不猜、不急簽、不讓期限過。把「我記得的」和「文件證明的」分開說，就已經是在保護自己。</p></div>
+      <div><p><strong>版本：</strong>2026／07／17（第三版：聚焦究責、調解與求償；調整親友用語、法律與醫療表達，新增本機資料清除）</p><p><strong>隱私：</strong>已盡量移除直接識別資料；本頁不主動上傳本機填寫內容，但網站主機仍可能保留基本連線紀錄。</p><p><strong>緊急：</strong>神經症狀惡化請急診／119；法律期限有疑問請立即找承辦單位或律師。</p><p><a href="#top">回到頁首 ↑</a></p></div>
+    </div>
+  </footer>
+
+  <nav class="mobile-nav" aria-label="手機快速導覽">
+    <a href="#elder"><span>🤝</span>給長輩</a><a href="#say"><span>說</span>怎麼說</a><a href="#meeting"><span>📋</span>當天</a><a href="#scenarios"><span>❓</span>手冊</a>
+  </nav>
+
+  <script>
+  (() => {
+    const storage = {
+      get(key, fallback) { try { const v = JSON.parse(localStorage.getItem(key)); return v === null || v === undefined ? fallback : v; } catch { return fallback; } },
+      set(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} }
+    };
+
+    const body = document.body;
+
+    /* 字級（預設放大，長輩友善） */
+    const savedFont = storage.get('accident-guide-font', 'large');
+    const setFont = value => {
+      body.classList.remove('large','xlarge');
+      if (value !== 'normal') body.classList.add(value);
+      document.querySelectorAll('[data-font]').forEach(b => b.classList.toggle('active', b.dataset.font === value));
+      storage.set('accident-guide-font', value);
+    };
+    setFont(savedFont);
+    document.querySelectorAll('[data-font]').forEach(btn => btn.addEventListener('click', () => setFont(btn.dataset.font)));
+
+    /* 高對比 */
+    const contrast = document.getElementById('contrast');
+    if (storage.get('accident-guide-contrast', false)) { body.classList.add('contrast'); contrast.classList.add('active'); contrast.setAttribute('aria-pressed','true'); }
+    contrast.addEventListener('click', () => {
+      const on = body.classList.toggle('contrast');
+      contrast.classList.toggle('active', on);
+      contrast.setAttribute('aria-pressed', String(on));
+      storage.set('accident-guide-contrast', on);
+    });
+
+    /* 長輩精簡版 */
+    const elderBtn = document.getElementById('elderToggle');
+    const setElder = on => {
+      body.classList.toggle('elder', on);
+      elderBtn.classList.toggle('active', on);
+      elderBtn.setAttribute('aria-pressed', String(on));
+      elderBtn.textContent = on ? '看完整版' : '長輩精簡版';
+      storage.set('accident-guide-elder', on);
+    };
+    setElder(storage.get('accident-guide-elder', false));
+    elderBtn.addEventListener('click', () => {
+      const on = !body.classList.contains('elder');
+      setElder(on);
+      if (on) document.getElementById('elder').scrollIntoView({behavior:'smooth'});
+    });
+
+    /* 期限倒數 */
+    function daysText(dateString) {
+      const end = new Date(dateString + 'T23:59:59+08:00');
+      const days = Math.ceil((end - new Date()) / 86400000);
+      if (days > 0) return '約剩 ' + days + ' 天';
+      if (days === 0) return '就是今天';
+      return '已過 ' + Math.abs(days) + ' 天';
+    }
+    document.getElementById('criminalDays').textContent = daysText('2026-11-06');
+    document.getElementById('appraisalDays').textContent = daysText('2026-11-06');
+
+    /* 調解日期 */
+    const mediationInput = document.getElementById('mediationDate');
+    const mediationDays = document.getElementById('mediationDays');
+    const renderMediation = () => {
+      const v = mediationInput.value;
+      mediationDays.textContent = v ? daysText(v) : '尚未填寫';
+    };
+    mediationInput.value = storage.get('accident-guide-mediation', '');
+    renderMediation();
+    mediationInput.addEventListener('change', () => { storage.set('accident-guide-mediation', mediationInput.value); renderMediation(); });
+
+    /* 清除本頁儲存在瀏覽器的資料（只清除 accident-guide- 開頭的鍵） */
+    const clearLocalData = document.getElementById('clearLocalData');
+    clearLocalData.addEventListener('click', () => {
+      const ok = window.confirm('要清除這台裝置上儲存的調解日期、閱讀設定、證據勾選與求償試算嗎？此動作無法復原。');
+      if (!ok) return;
+      try {
+        Object.keys(localStorage).filter(key => key.startsWith('accident-guide-')).forEach(key => localStorage.removeItem(key));
+      } catch {}
+      window.location.reload();
+    });
+
+    /* 複製（含 file:// 環境 fallback） */
+    async function copyText(text) {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) { await navigator.clipboard.writeText(text); return true; }
+        throw new Error('no-clipboard');
+      } catch {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.focus(); ta.select();
+          const ok = document.execCommand('copy');
+          ta.remove(); return ok;
+        } catch { return false; }
+      }
+    }
+    document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', async () => {
+      const target = document.querySelector(btn.dataset.copy);
+      const status = btn.parentElement.querySelector('.copy-status');
+      const ok = await copyText(target.innerText);
+      status.textContent = ok ? '已複製' : '無法自動複製，請長按文字選取';
+      setTimeout(() => status.textContent = '', 2500);
+    }));
+
+    /* 證據勾選 */
+    const checkboxes = [...document.querySelectorAll('[data-check]')];
+    const savedChecks = storage.get('accident-guide-checks', {});
+    checkboxes.forEach(c => c.checked = !!savedChecks[c.dataset.check]);
+    const updateProgress = () => {
+      const state = {};
+      checkboxes.forEach(c => state[c.dataset.check] = c.checked);
+      storage.set('accident-guide-checks', state);
+      const done = checkboxes.filter(c => c.checked).length;
+      document.getElementById('progressText').textContent = done + '／' + checkboxes.length + ' 已完成';
+      document.getElementById('progressBar').style.width = (done / checkboxes.length * 100) + '%';
+    };
+    checkboxes.forEach(c => c.addEventListener('change', updateProgress));
+    document.getElementById('clearChecks').addEventListener('click', () => { checkboxes.forEach(c => c.checked = false); updateProgress(); });
+    updateProgress();
+
+    /* 求償試算（含強制險扣除） */
+    const amountInputs = [...document.querySelectorAll('[data-amount]')];
+    const receivedInput = document.getElementById('received');
+    const calcSaved = storage.get('accident-guide-calc', null);
+    if (calcSaved) {
+      amountInputs.forEach(i => { if (calcSaved[i.id] !== undefined) i.value = calcSaved[i.id]; });
+      if (calcSaved.received !== undefined) receivedInput.value = calcSaved.received;
+    }
+    const fmt = n => 'NT$ ' + n.toLocaleString('zh-TW');
+    const updateCalc = () => {
+      let total = 0; const data = {};
+      amountInputs.forEach(i => { const value = Math.max(0, Number(i.value) || 0); total += value; data[i.id] = value; });
+      const received = Math.max(0, Number(receivedInput.value) || 0);
+      data.received = received;
+      document.getElementById('calcTotal').textContent = fmt(total);
+      document.getElementById('calcRemain').textContent = fmt(Math.max(0, total - received));
+      storage.set('accident-guide-calc', data);
+    };
+    amountInputs.forEach(i => i.addEventListener('input', updateCalc));
+    receivedInput.addEventListener('input', updateCalc);
+    document.getElementById('resetCalc').addEventListener('click', () => {
+      const defaults = {medical:1308, dentalVisit:100, denture:10000};
+      amountInputs.forEach(i => i.value = defaults[i.id] || 0);
+      receivedInput.value = 0;
+      updateCalc();
+    });
+    updateCalc();
+
+    /* 列印：自動展開所有摺疊區（修正 Chrome 收合內容印不出的問題） */
+    window.addEventListener('beforeprint', () => {
+      document.querySelectorAll('details:not([open])').forEach(d => { d.setAttribute('open',''); d.dataset.printOpened = '1'; });
+    });
+    window.addEventListener('afterprint', () => {
+      document.querySelectorAll('details[data-print-opened]').forEach(d => { d.removeAttribute('open'); delete d.dataset.printOpened; });
+      body.classList.remove('packmode');
+    });
+
+    /* 調解隨身包 */
+    const claimLabels = {
+      medical:'醫院自付', dentalVisit:'牙科自付', denture:'活動假牙（彈性牙床）', futureMedical:'後續醫療／復健',
+      caregiver:'必要看護／照護', transport:'就醫交通', aids:'手杖／必要輔具', repair:'機車修理／價值減損',
+      property:'安全帽等財物', income:'實際工作／收入損失', records:'必要證明／病歷費', mental:'精神慰撫金主張'
+    };
+    function buildPack() {
+      document.getElementById('packTime').textContent = new Date().toLocaleString('zh-TW');
+      document.getElementById('packMediation').textContent = mediationInput.value ? mediationInput.value + '（' + daysText(mediationInput.value) + '）' : '尚未填寫（收到通知書後補）';
+      let total = 0;
+      const rows = [];
+      amountInputs.forEach(i => {
+        const v = Math.max(0, Number(i.value) || 0);
+        total += v;
+        if (v > 0) rows.push('<tr><td>' + (claimLabels[i.id] || i.id) + '</td><td>' + v.toLocaleString('zh-TW') + '</td></tr>');
+      });
+      const received = Math.max(0, Number(receivedInput.value) || 0);
+      rows.push('<tr><th>損害合計</th><th>' + total.toLocaleString('zh-TW') + '</th></tr>');
+      rows.push('<tr><td>減：已領強制險給付</td><td>－' + received.toLocaleString('zh-TW') + '</td></tr>');
+      rows.push('<tr><th>向對方請求（未計責任比例）</th><th>' + Math.max(0, total - received).toLocaleString('zh-TW') + '</th></tr>');
+      document.getElementById('packClaims').innerHTML = rows.join('');
+      document.getElementById('packEvidence').innerHTML = checkboxes.map(c => {
+        const label = c.closest('.check-item').querySelector('strong').textContent;
+        return '<li>' + (c.checked ? '☑' : '☐') + ' ' + label + '</li>';
+      }).join('');
+    }
+    document.getElementById('packBtn').addEventListener('click', () => {
+      buildPack();
+      body.classList.add('packmode');
+      setTimeout(() => window.print(), 60);
+    });
+  })();
+  </script>
+</body>
+</html>

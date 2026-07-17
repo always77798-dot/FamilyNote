@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6efe3">
+    <meta name="description" content="FamilyNote 把家人的重要提醒整理成簡單、清楚、隨時可以查看的頁面。">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FamilyNote｜家人的重要資訊，一頁說清楚">
+    <meta property="og:description" content="把重要提醒整理好，讓家人需要時隨手就能找到。">
+    <meta property="og:image" content="https://family-note-seven.vercel.app/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FamilyNote｜家人的重要資訊，一頁說清楚">
+    <meta name="twitter:description" content="把重要提醒整理好，讓家人需要時隨手就能找到。">
+    <meta name="twitter:image" content="https://family-note-seven.vercel.app/og.png">
+    <title>FamilyNote｜家人的重要資訊，一頁說清楚</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #26372f;
+        --ink-soft: #607066;
+        --cream: #f6efe3;
+        --paper: #fffdf8;
+        --paper-deep: #eee2cf;
+        --sage: #6f8975;
+        --sage-deep: #405a49;
+        --terracotta: #c86f4c;
+        --sun: #edc66f;
+        --rose: #d89a92;
+        --line: #decfb8;
+        --shadow: 0 22px 60px rgba(72, 56, 35, 0.12);
+        --radius-lg: 30px;
+        --radius-md: 21px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 8% 8%, rgba(237, 198, 111, 0.18), transparent 25rem),
+          radial-gradient(circle at 92% 14%, rgba(111, 137, 117, 0.13), transparent 28rem),
+          var(--cream);
+        font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+        line-height: 1.65;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      .shell {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 92px;
+        gap: 24px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+      }
+
+      .brand__mark {
+        display: grid;
+        width: 43px;
+        aspect-ratio: 1;
+        place-items: center;
+        border: 1px solid rgba(38, 55, 47, 0.14);
+        border-radius: 14px 14px 18px 14px;
+        background: var(--paper);
+        box-shadow: 0 8px 18px rgba(72, 56, 35, 0.08);
+        color: var(--terracotta);
+        font-family: Georgia, serif;
+        font-size: 1rem;
+      }
+
+      .brand__name {
+        font-size: 1.08rem;
+      }
+
+      .site-header__count {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+      }
+
+      .site-header__count strong {
+        color: var(--ink);
+        font-size: 1.05rem;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+        align-items: center;
+        gap: clamp(42px, 7vw, 96px);
+        min-height: 560px;
+        padding: 64px 0 88px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 18px;
+        color: var(--sage-deep);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 28px;
+        height: 2px;
+        background: var(--terracotta);
+        content: "";
+      }
+
+      .hero h1 {
+        max-width: 760px;
+        margin: 0;
+        font-family: Georgia, "Noto Serif TC", "PMingLiU", serif;
+        font-size: clamp(3.35rem, 8vw, 6.8rem);
+        font-weight: 700;
+        letter-spacing: -0.075em;
+        line-height: 0.98;
+      }
+
+      .hero h1 span {
+        display: block;
+        margin-top: 0.08em;
+        color: var(--terracotta);
+      }
+
+      .hero__lead {
+        max-width: 640px;
+        margin: 30px 0 0;
+        color: var(--ink-soft);
+        font-size: clamp(1.02rem, 1.6vw, 1.18rem);
+      }
+
+      .hero__art {
+        position: relative;
+        min-height: 390px;
+        isolation: isolate;
+      }
+
+      .paper-note {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: min(310px, 75vw);
+        min-height: 260px;
+        padding: 28px;
+        border: 1px solid rgba(38, 55, 47, 0.12);
+        border-radius: 9px 9px 24px 9px;
+        box-shadow: var(--shadow);
+      }
+
+      .paper-note::after {
+        position: absolute;
+        right: 24px;
+        bottom: 22px;
+        width: 72px;
+        height: 8px;
+        border-radius: 999px;
+        background: currentColor;
+        content: "";
+        opacity: 0.35;
+      }
+
+      .paper-note--back {
+        top: 15px;
+        right: 3%;
+        transform: rotate(8deg);
+        background: var(--sun);
+        color: #765a24;
+      }
+
+      .paper-note--front {
+        top: 88px;
+        left: 2%;
+        transform: rotate(-6deg);
+        background: var(--paper);
+        color: var(--sage-deep);
+      }
+
+      .paper-note__label {
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .paper-note strong {
+        max-width: 220px;
+        font-family: Georgia, "Noto Serif TC", serif;
+        font-size: 2rem;
+        line-height: 1.25;
+      }
+
+      .directory {
+        padding: 88px 0 108px;
+        border-top: 1px solid rgba(38, 55, 47, 0.1);
+      }
+
+      .directory__head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 410px);
+        align-items: end;
+        gap: 36px;
+        margin-bottom: 42px;
+      }
+
+      .section-kicker {
+        margin: 0 0 8px;
+        color: var(--terracotta);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+      }
+
+      .directory h2 {
+        margin: 0;
+        font-family: Georgia, "Noto Serif TC", serif;
+        font-size: clamp(2rem, 4vw, 3.45rem);
+        letter-spacing: -0.045em;
+        line-height: 1.16;
+      }
+
+      .search {
+        position: relative;
+      }
+
+      .search label {
+        position: absolute;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+
+      .search input {
+        width: 100%;
+        min-height: 58px;
+        padding: 0 54px 0 19px;
+        border: 1px solid var(--line);
+        border-radius: 17px;
+        outline: none;
+        background: rgba(255, 253, 248, 0.8);
+        color: var(--ink);
+        transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+      }
+
+      .search input:focus {
+        border-color: var(--sage);
+        background: var(--paper);
+        box-shadow: 0 0 0 4px rgba(111, 137, 117, 0.14);
+      }
+
+      .search::after {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        color: var(--sage-deep);
+        content: "⌕";
+        font-size: 1.55rem;
+        line-height: 1;
+        pointer-events: none;
+      }
+
+      .note-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .note-card {
+        min-height: 310px;
+        overflow: hidden;
+        border: 1px solid rgba(38, 55, 47, 0.11);
+        border-radius: var(--radius-md);
+        background: var(--paper);
+        box-shadow: 0 10px 34px rgba(72, 56, 35, 0.07);
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      .note-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(38, 55, 47, 0.2);
+        box-shadow: var(--shadow);
+      }
+
+      .note-card__link {
+        display: flex;
+        flex-direction: column;
+        min-height: 310px;
+        padding: 25px;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .note-card__link:focus-visible {
+        outline: 4px solid rgba(111, 137, 117, 0.34);
+        outline-offset: -5px;
+      }
+
+      .note-card__topline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .note-card__number,
+      .note-card__slug {
+        font-family: ui-monospace, "Cascadia Code", monospace;
+        font-size: 0.75rem;
+      }
+
+      .note-card__number {
+        display: grid;
+        width: 37px;
+        aspect-ratio: 1;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--card-accent);
+        color: #fff;
+        font-weight: 800;
+      }
+
+      .note-card__slug {
+        color: var(--ink-soft);
+      }
+
+      .note-card__body {
+        margin: auto 0;
+        padding: 32px 0;
+      }
+
+      .note-card h3 {
+        margin: 0 0 12px;
+        font-family: Georgia, "Noto Serif TC", serif;
+        font-size: clamp(1.55rem, 3vw, 2.3rem);
+        letter-spacing: -0.04em;
+        line-height: 1.2;
+      }
+
+      .note-card p {
+        display: -webkit-box;
+        max-width: 590px;
+        margin: 0;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        color: var(--ink-soft);
+      }
+
+      .note-card__action {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--card-accent);
+        font-size: 0.9rem;
+        font-weight: 900;
+      }
+
+      .note-card--1 { --card-accent: var(--terracotta); }
+      .note-card--2 { --card-accent: var(--sage); }
+      .note-card--3 { --card-accent: #a57b46; }
+      .note-card--4 { --card-accent: #a86772; }
+
+      .empty-state {
+        display: none;
+        padding: 56px 24px;
+        border: 1px dashed var(--line);
+        border-radius: var(--radius-md);
+        color: var(--ink-soft);
+        text-align: center;
+      }
+
+      .empty-state[aria-hidden="false"] {
+        display: block;
+      }
+
+      .family-message {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 96px;
+        padding: clamp(30px, 5vw, 55px);
+        border-radius: var(--radius-lg);
+        background: var(--sage-deep);
+        color: #f9f4ea;
+        box-shadow: var(--shadow);
+      }
+
+      .family-message p {
+        max-width: 720px;
+        margin: 0;
+        font-family: Georgia, "Noto Serif TC", serif;
+        font-size: clamp(1.45rem, 3vw, 2.45rem);
+        letter-spacing: -0.025em;
+        line-height: 1.35;
+      }
+
+      .family-message__seal {
+        display: grid;
+        width: 88px;
+        aspect-ratio: 1;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        border-radius: 50%;
+        color: var(--sun);
+        font-family: Georgia, serif;
+        font-size: 1.5rem;
+        font-style: italic;
+      }
+
+      .site-footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 28px 0 42px;
+        border-top: 1px solid rgba(38, 55, 47, 0.1);
+        color: var(--ink-soft);
+        font-size: 0.84rem;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 820px) {
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          padding-top: 44px;
+        }
+
+        .hero__art {
+          min-height: 330px;
+        }
+
+        .paper-note--back {
+          right: 9%;
+        }
+
+        .paper-note--front {
+          left: 9%;
+        }
+
+        .directory__head {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+
+        .note-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .shell {
+          width: min(100% - 26px, 1160px);
+        }
+
+        .site-header {
+          min-height: 78px;
+        }
+
+        .brand__name {
+          font-size: 1rem;
+        }
+
+        .site-header__count {
+          display: none;
+        }
+
+        .hero {
+          gap: 20px;
+          padding-bottom: 64px;
+        }
+
+        .hero h1 {
+          font-size: clamp(3.35rem, 17vw, 5.2rem);
+        }
+
+        .hero__art {
+          min-height: 300px;
+        }
+
+        .paper-note {
+          width: 75%;
+          min-height: 220px;
+          padding: 22px;
+        }
+
+        .paper-note strong {
+          font-size: 1.55rem;
+        }
+
+        .directory {
+          padding: 68px 0 82px;
+        }
+
+        .note-card,
+        .note-card__link {
+          min-height: 290px;
+        }
+
+        .family-message {
+          grid-template-columns: 1fr;
+        }
+
+        .family-message__seal {
+          width: 64px;
+          justify-self: end;
+        }
+
+        .site-footer {
+          flex-direction: column;
+          gap: 5px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header shell">
+      <a class="brand" href="/" aria-label="回到 FamilyNote 首頁">
+        <span class="brand__mark" aria-hidden="true">FN</span>
+        <span class="brand__name">FamilyNote 家庭記事</span>
+      </a>
+      <p class="site-header__count"><strong>{{PAGE_COUNT}}</strong> 篇家人專頁</p>
+    </header>
+
+    <main>
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">For the people we love</p>
+          <h1 id="hero-title">重要的事，<span>一頁說清楚。</span></h1>
+          <p class="hero__lead">把行程、提醒和需要記住的細節整理在一起。家人需要的時候，打開連結就能安心找到答案。</p>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="paper-note paper-note--back">
+            <span class="paper-note__label">Remember</span>
+            <strong>記得帶東西，也記得照顧自己。</strong>
+          </div>
+          <div class="paper-note paper-note--front">
+            <span class="paper-note__label">Family note</span>
+            <strong>慢慢看，重要資訊都整理好了。</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="directory" aria-labelledby="directory-title">
+        <div class="shell">
+          <div class="directory__head">
+            <div>
+              <p class="section-kicker">FAMILY PAGES</p>
+              <h2 id="directory-title">家人的重要小紙條</h2>
+            </div>
+            <div class="search">
+              <label for="page-search">搜尋家人專頁</label>
+              <input id="page-search" type="search" placeholder="搜尋標題或內容…" autocomplete="off">
+            </div>
+          </div>
+
+          <div class="note-grid" id="page-list">
+{{PAGE_CARDS}}
+          </div>
+          <div class="empty-state" id="empty-state" aria-live="polite" aria-hidden="true">找不到符合的頁面，換個關鍵字再試試看。</div>
+        </div>
+      </section>
+
+      <aside class="family-message shell" aria-label="FamilyNote 的一句話">
+        <p>給家人的每一頁，都是把複雜事情變簡單的一張貼心紙條。</p>
+        <span class="family-message__seal" aria-hidden="true">with love</span>
+      </aside>
+    </main>
+
+    <footer class="site-footer shell">
+      <span>FamilyNote · 家庭重要資訊整理站</span>
+      <span>需要時，這裡一直都在。</span>
+    </footer>
+
+    <script>
+      const pages = {{PAGE_DATA}};
+      const searchInput = document.querySelector("#page-search");
+      const cards = [...document.querySelectorAll("[data-page-card]")];
+      const emptyState = document.querySelector("#empty-state");
+
+      searchInput.addEventListener("input", () => {
+        const query = searchInput.value.trim().toLocaleLowerCase("zh-Hant");
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const isVisible = !query || card.dataset.search.includes(query);
+          card.hidden = !isVisible;
+          if (isVisible) visibleCount += 1;
+        });
+
+        emptyState.setAttribute("aria-hidden", visibleCount === 0 ? "false" : "true");
+      });
+
+      window.familyNotePages = pages;
+    </script>
+  </body>
+</html>

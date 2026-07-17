@@ -1,6 +1,7 @@
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { normalizePageSlug } from "./slug.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const rootDirectory = path.resolve(scriptDirectory, "..");
@@ -19,6 +20,9 @@ assert(indexHtml.includes('id="page-search"'), "首頁缺少搜尋欄位。");
 assert(indexHtml.includes('aria-live="polite"'), "首頁缺少搜尋結果狀態提示。");
 assert(indexHtml.includes('href="/health-check"'), "首頁缺少健康檢查頁連結。");
 assert(indexHtml.includes('content="https://family-note-seven.vercel.app/og.png"'), "首頁缺少正式分享預覽圖網址。");
+assert(normalizePageSlug("TRIP260721.html") === "trip260721", "大寫檔名轉換失敗。");
+assert(normalizePageSlug("TRIP_260721.html") === "trip-260721", "底線檔名轉換失敗。");
+assert(normalizePageSlug("Family__Trip-2026.HTML") === "family-trip-2026", "混合檔名轉換失敗。");
 
 for (const page of pageManifest) {
   assert(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(page.slug), `網址代稱不合法：${page.slug}`);

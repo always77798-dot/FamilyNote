@@ -9,10 +9,14 @@ FamilyNote 是給家人查看重要提醒的靜態網站。只要把 HTML 檔案
 3. 提交到 GitHub 的 `main` 分支。
 4. Vercel 建置完成後，網址就是 `/family-trip`。
 
-檔名只能使用英文小寫、數字與連字號，例如：
+檔名可以使用英文大小寫、數字、連字號與底線。網址會自動轉成小寫，底線也會自動轉成連字號，例如：
 
 - `health-check.html` → `/health-check`
 - `family-trip-2026.html` → `/family-trip-2026`
+- `TRIP260721.html` → `/trip260721`
+- `TRIP_260721.html` → `/trip-260721`
+
+如果兩個檔名轉換後得到相同網址（例如 `TRIP_01.html` 與 `trip-01.html`），建置會停止並提示需要改名。
 
 首頁卡片名稱會讀取 HTML 的 `<title>`。如要自訂卡片摘要，可在 HTML 的 `<head>` 加入：
 

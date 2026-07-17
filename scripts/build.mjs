@@ -1,6 +1,7 @@
 import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { normalizePageSlug } from "./slug.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const rootDirectory = path.resolve(scriptDirectory, "..");
@@ -8,9 +9,6 @@ const pagesDirectory = path.join(rootDirectory, "pages");
 const staticDirectory = path.join(rootDirectory, "static");
 const outputDirectory = path.join(rootDirectory, "dist");
 const templatePath = path.join(rootDirectory, "src", "index.template.html");
-
-const reservedSlugs = new Set(["index", "pages", "api", "assets", "static"]);
-const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 function decodeHtml(value) {
   return value
@@ -88,22 +86,19 @@ async function build() {
   }
 
   const pages = [];
+  const sourceFileBySlug = new Map();
 
   for (const fileName of htmlFiles) {
-    const originalSlug = path.basename(fileName, path.extname(fileName));
-    const slug = originalSlug.toLowerCase();
+    const slug = normalizePageSlug(fileName);
+    const existingSourceFile = sourceFileBySlug.get(slug);
 
-    if (originalSlug !== slug) {
-      throw new Error(`檔名「${fileName}」含有大寫字母；請全部改成英文小寫。`);
+    if (existingSourceFile) {
+      throw new Error(
+        `檔名「${existingSourceFile}」與「${fileName}」都會轉成網址「/${slug}」，請擇一改名。`,
+      );
     }
 
-    if (!slugPattern.test(slug)) {
-      throw new Error(`檔名「${fileName}」不符合規則；請使用英文小寫、數字與連字號。`);
-    }
-
-    if (reservedSlugs.has(slug)) {
-      throw new Error(`檔名「${fileName}」使用了保留名稱「${slug}」，請更換檔名。`);
-    }
+    sourceFileBySlug.set(slug, fileName);
 
     const sourcePath = path.join(pagesDirectory, fileName);
     const html = await readFile(sourcePath, "utf8");
@@ -113,6 +108,7 @@ async function build() {
 
     pages.push({
       slug,
+      sourceFile: fileName,
       title,
       description,
       accent: accentFor(slug),
@@ -146,7 +142,7 @@ async function build() {
   );
 
   console.log(`FamilyNote 建置完成：${pages.length} 個子頁。`);
-  for (const page of pages) console.log(`  /${page.slug}  ←  pages/${page.slug}.html`);
+  for (const page of pages) console.log(`  /${page.slug}  ←  pages/${page.sourceFile}`);
 }
 
 build().catch((error) => {

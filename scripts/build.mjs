@@ -9,6 +9,17 @@ const pagesDirectory = path.join(rootDirectory, "pages");
 const staticDirectory = path.join(rootDirectory, "static");
 const outputDirectory = path.join(rootDirectory, "dist");
 const templatePath = path.join(rootDirectory, "src", "index.template.html");
+const privacyMetaTag = '<meta name="robots" content="noindex, nofollow, noarchive">';
+const blankRootHtml = `<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ${privacyMetaTag}
+  </head>
+  <body></body>
+</html>
+`;
 
 function decodeHtml(value) {
   return value
@@ -47,6 +58,21 @@ function readMeta(html, name) {
   }
 
   return "";
+}
+
+function protectFromIndexing(html, fileName) {
+  const robotsMetaPattern = /<meta\b(?=[^>]*\bname\s*=\s*["']robots["'])[^>]*>/i;
+
+  if (robotsMetaPattern.test(html)) {
+    return html.replace(robotsMetaPattern, privacyMetaTag);
+  }
+
+  const headPattern = /<head\b[^>]*>/i;
+  if (!headPattern.test(html)) {
+    throw new Error(`「${fileName}」缺少 <head>，無法自動加入防搜尋引擎索引設定。`);
+  }
+
+  return html.replace(headPattern, (headTag) => `${headTag}\n    ${privacyMetaTag}`);
 }
 
 function accentFor(slug) {
@@ -101,9 +127,10 @@ async function build() {
     sourceFileBySlug.set(slug, fileName);
 
     const sourcePath = path.join(pagesDirectory, fileName);
-    const html = await readFile(sourcePath, "utf8");
-    const title = readTitle(html, slug);
-    const customDescription = readMeta(html, "family-note:summary") || readMeta(html, "description");
+    const sourceHtml = await readFile(sourcePath, "utf8");
+    const title = readTitle(sourceHtml, slug);
+    const customDescription =
+      readMeta(sourceHtml, "family-note:summary") || readMeta(sourceHtml, "description");
     const description = customDescription || `點開查看「${title}」的完整內容。`;
 
     pages.push({
@@ -112,7 +139,7 @@ async function build() {
       title,
       description,
       accent: accentFor(slug),
-      html,
+      html: protectFromIndexing(sourceHtml, fileName),
     });
   }
 
@@ -129,19 +156,18 @@ async function build() {
   const publicPageData = pages.map(({ slug, title, description }) => ({ slug, title, description }));
   const safePageData = JSON.stringify(publicPageData).replaceAll("<", "\\u003c");
   const cards = pages.map(cardMarkup).join("\n");
-  const indexHtml = template
+  const mainHtml = protectFromIndexing(
+    template
     .replaceAll("{{PAGE_COUNT}}", String(pages.length))
     .replace("{{PAGE_CARDS}}", cards)
-    .replace("{{PAGE_DATA}}", safePageData);
-
-  await writeFile(path.join(outputDirectory, "index.html"), indexHtml, "utf8");
-  await writeFile(
-    path.join(outputDirectory, "pages.json"),
-    `${JSON.stringify(publicPageData, null, 2)}\n`,
-    "utf8",
+      .replace("{{PAGE_DATA}}", safePageData),
+    "src/index.template.html",
   );
 
-  console.log(`FamilyNote 建置完成：${pages.length} 個子頁。`);
+  await writeFile(path.join(outputDirectory, "index.html"), blankRootHtml, "utf8");
+  await writeFile(path.join(outputDirectory, "main.html"), mainHtml, "utf8");
+
+  console.log(`FamilyNote 建置完成：根頁空白、/main 為首頁，共 ${pages.length} 個子頁。`);
   for (const page of pages) console.log(`  /${page.slug}  ←  pages/${page.sourceFile}`);
 }
 
